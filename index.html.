@@ -1,8 +1,19 @@
-jersenterpriseoficial-hub/
-│
-├─ index.html
-├─ simulador.html
-├─ imagenes/
-│  ├─ facebook.png
-│  ├─ instagram.png
-│  └─ whatsapp.png
+<!-- Bloque de Redes Sociales -->
+<div class="social-icons-jers" style="text-align:center; margin:20px 0;">
+    <a href="https://www.facebook.com/tu-pagina" target="_blank" style="margin:0 10px;">
+        <img src="imagenes/facebook.png" alt="Facebook" width="40">
+    </a>
+    <a href="https://www.instagram.com/tu-pagina" target="_blank" style="margin:0 10px;">
+        <img src="imagenes/instagram.png" alt="Instagram" width="40">
+    </a>
+    <a href="https://wa.me/tu-numero" target="_blank" style="margin:0 10px;">
+        <img src="imagenes/whatsapp.png" alt="WhatsApp" width="40">
+    </a>
+</div>
+
+<!-- Enlace al Simulador de Inversiones -->
+<div style="text-align:center; margin:20px 0;">
+    <a href="simulador.html" style="padding:10px 20px; background-color:#2e7d32; color:white; text-decoration:none; border-radius:6px; font-weight:bold;">
+        Abrir Simulador de Inversión
+    </a>
+</div>
