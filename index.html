@@ -54,15 +54,18 @@
         section {
             padding: 60px 20px;
             text-align: center;
+            max-width: 1100px;
+            margin: 20px auto;
+            line-height: 1.6;
         }
 
         #nosotros, #quienes, #noticias, #suscribete, #simulador {
             background-color: var(--gris-claro);
             color: var(--fondo-principal);
             border-radius: 10px;
-            margin: 20px auto;
-            max-width: 900px;
             padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
         h2 {
@@ -147,6 +150,24 @@
             width: 60%;
         }
 
+        /* Slider para Nosotros */
+        .fondo-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.5);
+            z-index: 1;
+            transition: background-image 1s ease-in-out;
+        }
+
+        .contenido-nosotros {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
@@ -176,14 +197,17 @@
 </section>
 
 <section id="nosotros">
-    <h2>Nosotros</h2>
-    <p>En JERS ENTERPRISE nos dedicamos a la gestión integral de inversiones, ofreciendo soluciones personalizadas según el perfil de cada cliente.</p>
-    <p>Nos destacamos por:</p>
-    <ul>
-        <li>Transparencia en todas nuestras operaciones.</li>
-        <li>Seguridad financiera y respaldo notarial.</li>
-        <li>Asesoría profesional y constante actualización del mercado.</li>
-    </ul>
+    <div class="fondo-slider"></div>
+    <div class="contenido-nosotros">
+        <h2>Nosotros</h2>
+        <p>En JERS ENTERPRISE nos dedicamos a la gestión integral de inversiones, ofreciendo soluciones personalizadas según el perfil de cada cliente.</p>
+        <p>Nos destacamos por:</p>
+        <ul>
+            <li>Transparencia en todas nuestras operaciones.</li>
+            <li>Seguridad financiera y respaldo notarial.</li>
+            <li>Asesoría profesional y constante actualización del mercado.</li>
+        </ul>
+    </div>
 </section>
 
 <section id="quienes">
@@ -250,7 +274,7 @@ function calcularInversion() {
         return;
     }
 
-    const ganancia = monto * (porcentaje/100) * (dias/30); // proporcional al tiempo
+    const ganancia = monto * (porcentaje/100) * (dias/30);
     const total = monto + ganancia;
 
     document.getElementById('resultado').innerHTML = `
@@ -260,6 +284,26 @@ function calcularInversion() {
         <p>Total: S/. ${total.toFixed(2)}</p>
     `;
 }
+
+// Slider de imágenes para Nosotros
+const slider = document.querySelector('.fondo-slider');
+const imagenes = [
+    'imagenes/ny-financial.jpg',
+    'imagenes/london-financial.jpg',
+    'imagenes/tokyo-financial.jpg',
+    'imagenes/hk-financial.jpg',
+    'imagenes/frankfurt-financial.jpg'
+];
+
+let indice = 0;
+
+function cambiarImagen() {
+    slider.style.backgroundImage = `url('${imagenes[indice]}')`;
+    indice = (indice + 1) % imagenes.length;
+}
+
+cambiarImagen();
+setInterval(cambiarImagen, 5000);
 </script>
 
 </body>
