@@ -1,309 +1,274 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JERS ENTERPRISE</title>
-    <link rel="icon" href="imagenes/logo-jers.png" type="image/png">
-    <link rel="stylesheet" href="css/estilos.css">
-    <style>
-        /* Variables de color */
-        :root {
-            --fondo-principal: #1a1a1a;   /* Negro profesional */
-            --gris-claro: #B0B0B0;        /* Gris ceniza */
-            --blanco: #ffffff;             /* Textos principales */
-            --azul-acento: #004080;        /* Para títulos y botones */
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JERS ENTERPRISE | Gestión Profesional de Inversiones</title>
 
-        body {
-            background-color: var(--fondo-principal);
-            color: var(--blanco);
-            font-family: Arial, sans-serif;
-            margin:0;
-        }
+<style>
 
-        header {
-            background-color: var(--fondo-principal);
-            color: var(--blanco);
-            text-align: center;
-            padding: 20px 0;
-        }
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 10px 0 0 0;
-        }
+body{
+background:#f4f4f4;
+color:#222;
+}
 
-        nav ul li {
-            margin: 0 15px;
-        }
+/* HEADER */
+header{
+background:#1f1f1f;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+color:white;
+}
 
-        nav ul li a {
-            color: var(--blanco);
-            text-decoration: none;
-            font-weight: bold;
-        }
+header h1{
+font-size:22px;
+letter-spacing:1px;
+}
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
+nav ul{
+list-style:none;   /* 🔥 ELIMINA LOS PUNTOS */
+display:flex;
+gap:30px;
+}
 
-        section {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 1100px;
-            margin: 20px auto;
-            line-height: 1.6;
-        }
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
 
-        #nosotros, #quienes, #noticias, #suscribete, #simulador {
-            background-color: var(--gris-claro);
-            color: var(--fondo-principal);
-            border-radius: 10px;
-            padding: 40px 20px;
-            position: relative;
-            overflow: hidden;
-        }
+nav ul li a:hover{
+color:#00aaff;
+}
 
-        h2 {
-            color: var(--azul-acento);
-            margin-bottom: 20px;
-        }
+/* SECCIONES */
+section{
+padding:80px 10%;
+text-align:center;
+}
 
-        a {
-            color: var(--azul-acento);
-        }
+h2{
+font-size:32px;
+margin-bottom:20px;
+color:#1f1f1f;
+}
 
-        a:hover {
-            text-decoration: underline;
-        }
+p{
+max-width:900px;
+margin:0 auto 20px auto;
+line-height:1.7;
+font-size:18px;
+color:#555;
+}
 
-        button {
-            background-color: var(--azul-acento);
-            color: var(--blanco);
-            border: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
+/* INICIO */
+#inicio{
+background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+url('newyork-financial.jpg');
+background-size:cover;
+background-position:center;
+color:white;
+}
 
-        button:hover {
-            background-color: #003366;
-            transform: scale(1.05);
-        }
+#inicio h2{
+color:white;
+font-size:40px;
+}
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 15px;
-        }
+/* NOSOTROS */
+#nosotros{
+background:#ffffff;
+}
 
-        .social-icons a img {
-            width: 40px;
-            height: 40px;
-            transition: transform 0.3s;
-        }
+/* QUIENES SOMOS */
+#quienes{
+background:#ececec;
+}
 
-        .social-icons a:hover img {
-            transform: scale(1.2);
-        }
+/* NOTICIAS */
+#noticias{
+background:#ffffff;
+}
 
-        .equipo-img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
+/* SUSCRIPCIÓN */
+#suscripcion{
+background:#1f1f1f;
+color:white;
+}
 
-        input, select {
-            padding: 10px;
-            margin: 10px 0;
-            width: 80%;
-            max-width: 300px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
+input{
+padding:12px;
+width:280px;
+border:none;
+border-radius:5px;
+margin-top:15px;
+}
 
-        #resultado {
-            margin-top: 20px;
-            background-color: var(--blanco);
-            padding: 20px;
-            border-radius: 8px;
-            color: #000;
-        }
+button{
+padding:12px 25px;
+border:none;
+background:#00aaff;
+color:white;
+border-radius:5px;
+cursor:pointer;
+margin-left:10px;
+transition:0.3s;
+}
 
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+button:hover{
+background:#0088cc;
+}
 
-        input[type=email] {
-            width: 60%;
-        }
+/* SIMULADOR */
+#simulador{
+background:#ececec;
+}
 
-        /* Slider para Nosotros */
-        .fondo-slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.5);
-            z-index: 1;
-            transition: background-image 1s ease-in-out;
-        }
+.sim-box{
+background:white;
+padding:40px;
+border-radius:10px;
+max-width:600px;
+margin:30px auto;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
 
-        .contenido-nosotros {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
+.sim-box input, .sim-box select{
+width:100%;
+margin:10px 0;
+}
+
+.resultado{
+margin-top:20px;
+font-weight:bold;
+font-size:18px;
+}
+
+/* FOOTER */
+footer{
+background:#1f1f1f;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.social a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-size:20px;
+}
+
+</style>
 </head>
 <body>
 
 <header>
-    <img src="imagenes/logo-jers.png" alt="Logo JERS ENTERPRISE" width="120">
-    <h1>JERS ENTERPRISE</h1>
-    <p>Dedicado a la Gestión de Fondos</p>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#quienes">Quiénes Somos</a></li>
-            <li><a href="#noticias">Noticias Financieras</a></li>
-            <li><a href="#suscribete">Suscríbete</a></li>
-            <li><a href="#simulador">Simulador</a></li>
-        </ul>
-    </nav>
+<h1>JERS ENTERPRISE</h1>
+<nav>
+<ul>
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#quienes">Quiénes Somos</a></li>
+<li><a href="#noticias">Noticias</a></li>
+<li><a href="#suscripcion">Suscríbete</a></li>
+<li><a href="#simulador">Simulador</a></li>
+</ul>
+</nav>
 </header>
 
 <section id="inicio">
-    <h2>Bienvenido a JERS ENTERPRISE</h2>
-    <p>Ofrecemos contratos de inversión notariados y asesoría financiera profesional.</p>
-    <p>Nos enfocamos en maximizar tus rendimientos de manera segura, brindando herramientas y simuladores que te permiten tomar decisiones informadas sobre tus inversiones.</p>
-    <p>Confía en un equipo con años de experiencia en gestión de fondos y estrategias financieras confiables.</p>
-    <img src="imagenes/equipo-jers.png" alt="Equipo JERS ENTERPRISE" class="equipo-img">
+<h2>Gestión Estratégica de Inversiones Globales</h2>
+<p>En JERS ENTERPRISE analizamos los principales mercados financieros del mundo para ofrecer oportunidades estructuradas, seguras y con visión de crecimiento sostenible.</p>
 </section>
 
 <section id="nosotros">
-    <div class="fondo-slider"></div>
-    <div class="contenido-nosotros">
-        <h2>Nosotros</h2>
-        <p>En JERS ENTERPRISE nos dedicamos a la gestión integral de inversiones, ofreciendo soluciones personalizadas según el perfil de cada cliente.</p>
-        <p>Nos destacamos por:</p>
-        <ul>
-            <li>Transparencia en todas nuestras operaciones.</li>
-            <li>Seguridad financiera y respaldo notarial.</li>
-            <li>Asesoría profesional y constante actualización del mercado.</li>
-        </ul>
-    </div>
+<h2>Nosotros</h2>
+<p>Somos una firma especializada en gestión de capital, análisis macroeconómico y estrategias de inversión diversificadas. Nuestro enfoque combina disciplina financiera, análisis técnico y visión global.</p>
 </section>
 
 <section id="quienes">
-    <h2>Quiénes Somos</h2>
-    <p>Somos un equipo multidisciplinario de asesores financieros, analistas de mercado y expertos en contratos notariados.</p>
-    <p>Nuestra misión es educar a nuestros clientes, brindar claridad y confianza en cada inversión que realizan.</p>
-    <p>Contamos con experiencia en inversiones agresivas, moderadas y conservadoras, adaptándonos a todos los perfiles.</p>
+<h2>Quiénes Somos</h2>
+<p>JERS ENTERPRISE es una organización enfocada en la estructuración de inversiones responsables, acompañando a cada cliente según su perfil: conservador, moderado o agresivo.</p>
 </section>
 
 <section id="noticias">
-    <h2>Noticias Financieras</h2>
-    <p>Mantente informado sobre las últimas tendencias y noticias económicas de alto impacto que pueden afectar tus inversiones:</p>
-    <ul>
-        <li>Suba de aranceles en Estados Unidos y su impacto en los mercados globales.</li>
-        <li>Informe del PIB final interanual de México.</li>
-        <li>Inventarios de cobre de la LME y su repercusión en la industria.</li>
-        <li>Tasas de interés y políticas monetarias que afectan tu rentabilidad.</li>
-    </ul>
+<h2>Noticias Financieras</h2>
+<p>Monitoreamos Wall Street, mercados europeos y asiáticos para mantener informados a nuestros clientes sobre oportunidades de alto impacto financiero.</p>
 </section>
 
-<section id="suscribete">
-    <h2>Suscríbete a Noticias Financieras</h2>
-    <form onsubmit="alert('¡Gracias por suscribirte!'); return false;">
-        <input type="email" placeholder="Ingresa tu correo" required>
-        <button type="submit">Suscribirse</button>
-    </form>
+<section id="suscripcion">
+<h2>Suscríbete a Noticias de Alto Impacto</h2>
+<input type="email" placeholder="Ingresa tu correo">
+<button>Suscribirme</button>
 </section>
 
 <section id="simulador">
-    <h2>Simulador de Inversiones</h2>
-    <form id="formSimulador">
-        <input type="number" id="monto" placeholder="Monto de inversión" required>
-        <select id="tiempo">
-            <option value="7">1 Semana</option>
-            <option value="30">1 Mes</option>
-            <option value="90">3 Meses</option>
-            <option value="180">6 Meses</option>
-            <option value="365">12 Meses</option>
-        </select>
-        <input type="number" id="porcentaje" placeholder="Porcentaje de rendimiento %" required>
-        <button type="button" onclick="calcularInversion()">Calcular</button>
-    </form>
-    <div id="resultado"></div>
+<h2>Simulador Profesional de Inversión</h2>
+
+<div class="sim-box">
+<input type="number" id="monto" placeholder="Monto de inversión">
+<select id="tiempo">
+<option value="1">1 Semana (2%)</option>
+<option value="4">1 Mes (8%)</option>
+<option value="12">3 Meses (20%)</option>
+<option value="24">6 Meses (40%)</option>
+<option value="48">12 Meses (85%)</option>
+</select>
+<button onclick="calcular()">Calcular Rendimiento</button>
+
+<div class="resultado" id="resultado"></div>
+</div>
+
 </section>
 
 <footer>
-    <p>&copy; 2026 JERS ENTERPRISE</p>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/jersenterpriseoficial" target="_blank"><img src="imagenes/facebook.png" alt="Facebook"></a>
-        <a href="https://www.instagram.com/jersenterpriseoficial" target="_blank"><img src="imagenes/instagram.png" alt="Instagram"></a>
-        <a href="https://wa.me/519XXXXXXXX" target="_blank"><img src="imagenes/whatsapp.png" alt="WhatsApp"></a>
-        <a href="https://www.linkedin.com/company/jersenterpriseoficial" target="_blank"><img src="imagenes/linkedin.png" alt="LinkedIn"></a>
-    </div>
+<p>© 2026 JERS ENTERPRISE - Gestión Profesional de Fondos</p>
+<div class="social">
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">LinkedIn</a>
+<a href="#">WhatsApp</a>
+</div>
 </footer>
 
 <script>
-function calcularInversion() {
-    const monto = parseFloat(document.getElementById('monto').value);
-    const dias = parseInt(document.getElementById('tiempo').value);
-    const porcentaje = parseFloat(document.getElementById('porcentaje').value);
+function calcular(){
+let monto = parseFloat(document.getElementById("monto").value);
+let tiempo = document.getElementById("tiempo").value;
 
-    if(isNaN(monto) || isNaN(dias) || isNaN(porcentaje)) {
-        alert('Por favor completa todos los campos correctamente.');
-        return;
-    }
-
-    const ganancia = monto * (porcentaje/100) * (dias/30);
-    const total = monto + ganancia;
-
-    document.getElementById('resultado').innerHTML = `
-        <h3>Resultados:</h3>
-        <p>Capital Inicial: S/. ${monto.toFixed(2)}</p>
-        <p>Ganancia Estimada: S/. ${ganancia.toFixed(2)}</p>
-        <p>Total: S/. ${total.toFixed(2)}</p>
-    `;
+if(!monto){
+alert("Ingrese un monto válido");
+return;
 }
 
-// Slider de imágenes para Nosotros
-const slider = document.querySelector('.fondo-slider');
-const imagenes = [
-    'imagenes/ny-financial.jpg',
-    'imagenes/london-financial.jpg',
-    'imagenes/tokyo-financial.jpg',
-    'imagenes/hk-financial.jpg',
-    'imagenes/frankfurt-financial.jpg'
-];
+let porcentajes = {
+1:0.02,
+4:0.08,
+12:0.20,
+24:0.40,
+48:0.85
+};
 
-let indice = 0;
+let ganancia = monto * porcentajes[tiempo];
+let total = monto + ganancia;
 
-function cambiarImagen() {
-    slider.style.backgroundImage = `url('${imagenes[indice]}')`;
-    indice = (indice + 1) % imagenes.length;
+document.getElementById("resultado").innerHTML =
+"Capital: $" + monto.toFixed(2) +
+"<br>Ganancia: $" + ganancia.toFixed(2) +
+"<br>Total proyectado: $" + total.toFixed(2);
 }
-
-cambiarImagen();
-setInterval(cambiarImagen, 5000);
 </script>
 
 </body>
