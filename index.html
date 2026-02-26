@@ -7,23 +7,23 @@
     <link rel="icon" href="imagenes/logo-jers.png" type="image/png">
     <link rel="stylesheet" href="css/estilos.css">
     <style>
-        /* Colores profesionales: gris ceniza y azul corporativo */
+        /* Variables de color */
         :root {
-            --gris-ceniza: #B0B0B0;
-            --azul-corporativo: #004080;
-            --blanco: #ffffff;
-            --azul-claro: #e6f0ff;
+            --fondo-principal: #1a1a1a;   /* Negro profesional */
+            --gris-claro: #B0B0B0;        /* Gris ceniza */
+            --blanco: #ffffff;             /* Textos principales */
+            --azul-acento: #004080;        /* Para títulos y botones */
         }
 
         body {
+            background-color: var(--fondo-principal);
+            color: var(--blanco);
             font-family: Arial, sans-serif;
             margin:0;
-            background-color: var(--gris-ceniza);
-            color: #333;
         }
 
         header {
-            background-color: var(--azul-corporativo);
+            background-color: var(--fondo-principal);
             color: var(--blanco);
             text-align: center;
             padding: 20px 0;
@@ -56,24 +56,42 @@
             text-align: center;
         }
 
-        #nosotros, #quienes, #noticias, #suscribete {
-            background-color: var(--blanco);
-        }
-
-        #inicio {
-            background-color: var(--azul-claro);
+        #nosotros, #quienes, #noticias, #suscribete, #simulador {
+            background-color: var(--gris-claro);
+            color: var(--fondo-principal);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 40px 20px;
         }
 
         h2 {
-            color: var(--azul-corporativo);
+            color: var(--azul-acento);
             margin-bottom: 20px;
         }
 
-        footer {
-            background-color: #1A1A1A;
+        a {
+            color: var(--azul-acento);
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: var(--azul-acento);
             color: var(--blanco);
-            padding: 30px 0;
-            text-align: center;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background-color: #003366;
+            transform: scale(1.05);
         }
 
         .social-icons {
@@ -93,16 +111,15 @@
             transform: scale(1.2);
         }
 
-        /* Simulador de inversiones */
-        #simulador {
-            background-color: var(--azul-claro);
-            padding: 50px 20px;
+        .equipo-img {
+            max-width: 90%;
+            height: auto;
             border-radius: 10px;
-            max-width: 700px;
-            margin: 0 auto;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        #simulador input, #simulador select, #simulador button {
+        input, select {
             padding: 10px;
             margin: 10px 0;
             width: 80%;
@@ -120,29 +137,10 @@
             color: #000;
         }
 
-        .equipo-img {
-            max-width: 90%;
-            height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-
         form {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        button {
-            background-color: var(--azul-corporativo);
-            color: var(--blanco);
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background-color: #003366;
         }
 
         input[type=email] {
@@ -172,26 +170,37 @@
 <section id="inicio">
     <h2>Bienvenido a JERS ENTERPRISE</h2>
     <p>Ofrecemos contratos de inversión notariados y asesoría financiera profesional.</p>
+    <p>Nos enfocamos en maximizar tus rendimientos de manera segura, brindando herramientas y simuladores que te permiten tomar decisiones informadas sobre tus inversiones.</p>
+    <p>Confía en un equipo con años de experiencia en gestión de fondos y estrategias financieras confiables.</p>
     <img src="imagenes/equipo-jers.png" alt="Equipo JERS ENTERPRISE" class="equipo-img">
 </section>
 
 <section id="nosotros">
     <h2>Nosotros</h2>
-    <p>En JERS ENTERPRISE nos dedicamos a la gestión de inversiones seguras y rentables para nuestros clientes.</p>
+    <p>En JERS ENTERPRISE nos dedicamos a la gestión integral de inversiones, ofreciendo soluciones personalizadas según el perfil de cada cliente.</p>
+    <p>Nos destacamos por:</p>
+    <ul>
+        <li>Transparencia en todas nuestras operaciones.</li>
+        <li>Seguridad financiera y respaldo notarial.</li>
+        <li>Asesoría profesional y constante actualización del mercado.</li>
+    </ul>
 </section>
 
 <section id="quienes">
     <h2>Quiénes Somos</h2>
-    <p>Somos un equipo profesional con años de experiencia en inversiones, asesoría financiera y contratos notariados.</p>
+    <p>Somos un equipo multidisciplinario de asesores financieros, analistas de mercado y expertos en contratos notariados.</p>
+    <p>Nuestra misión es educar a nuestros clientes, brindar claridad y confianza en cada inversión que realizan.</p>
+    <p>Contamos con experiencia en inversiones agresivas, moderadas y conservadoras, adaptándonos a todos los perfiles.</p>
 </section>
 
 <section id="noticias">
     <h2>Noticias Financieras</h2>
-    <p>Mantente informado con noticias económicas de alto impacto que afectan a tus inversiones.</p>
+    <p>Mantente informado sobre las últimas tendencias y noticias económicas de alto impacto que pueden afectar tus inversiones:</p>
     <ul>
-        <li>Suba de aranceles en Estados Unidos afecta los mercados.</li>
+        <li>Suba de aranceles en Estados Unidos y su impacto en los mercados globales.</li>
         <li>Informe del PIB final interanual de México.</li>
-        <li>Inventarios de cobre de la LME muestran cambios importantes.</li>
+        <li>Inventarios de cobre de la LME y su repercusión en la industria.</li>
+        <li>Tasas de interés y políticas monetarias que afectan tu rentabilidad.</li>
     </ul>
 </section>
 
@@ -221,7 +230,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2023 JERS ENTERPRISE</p>
+    <p>&copy; 2026 JERS ENTERPRISE</p>
     <div class="social-icons">
         <a href="https://www.facebook.com/jersenterpriseoficial" target="_blank"><img src="imagenes/facebook.png" alt="Facebook"></a>
         <a href="https://www.instagram.com/jersenterpriseoficial" target="_blank"><img src="imagenes/instagram.png" alt="Instagram"></a>
