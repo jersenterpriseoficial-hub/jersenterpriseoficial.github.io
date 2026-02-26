@@ -1,210 +1,35 @@
-<body>
+/* MEJORA VISUAL SIN AFECTAR SIMULADOR */
 
-<header>
-<h1>JERS ENTERPRISE</h1>
-<nav>
-<ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#nosotros">Nosotros</a></li>
-<li><a href="#quienes">Quiénes Somos</a></li>
-<li><a href="#noticias">Noticias</a></li>
-<li><a href="#suscripcion">Evaluación</a></li>
-<li><a href="#simulador">Simulador</a></li>
-</ul>
-</nav>
-</header>
-
-<section id="inicio">
-<h2>Gestión Estratégica de Inversiones Globales</h2>
-<p>En JERS ENTERPRISE estructuramos oportunidades financieras con análisis macroeconómico, disciplina técnica y visión global de mercados.</p>
-</section>
-
-<section id="nosotros">
-<h2>Nosotros</h2>
-<p>Firma especializada en gestión de capital, estructuración de portafolios y análisis financiero internacional.</p>
-</section>
-
-<section id="quienes">
-<h2>Quiénes Somos</h2>
-<p>Organización dedicada a la gestión profesional de fondos, segmentando estrategias según perfil conservador, moderado o agresivo.</p>
-</section>
-
-<section id="noticias">
-<h2>Noticias Financieras</h2>
-<p>Monitoreo constante de Wall Street, Europa y Asia para identificar oportunidades de alto impacto.</p>
-</section>
-
-<!-- ==================== EVALUACIÓN PROFESIONAL ==================== -->
-
-<section id="suscripcion">
-<h2>Evaluación Profesional de Perfil de Inversión</h2>
-
-<div class="sim-box">
-
-<form id="formEvaluacion" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
-
-<h3>Datos Personales</h3>
-<input type="text" name="nombre_completo" placeholder="Nombres y Apellidos completos" required>
-<input type="text" name="dni" placeholder="DNI" required>
-<input type="text" name="ciudad" placeholder="Ciudad" required>
-<input type="text" name="pais" placeholder="País" required>
-<input type="email" name="email" placeholder="Correo electrónico" required>
-
-<h3>Información de Inversión</h3>
-
-<label>Monto estimado a invertir:</label>
-<input type="number" id="montoPerfil" name="monto" required>
-
-<label>Plazo de inversión:</label>
-<select id="plazoPerfil" name="plazo" required>
-<option value="1">1 Semana</option>
-<option value="4">1 Mes</option>
-<option value="12">3 Meses</option>
-<option value="24">6 Meses</option>
-<option value="48">12 Meses</option>
-</select>
-
-<label>Nivel de tolerancia al riesgo:</label>
-<select id="riesgoPerfil" name="riesgo" required>
-<option value="bajo">Bajo</option>
-<option value="medio">Medio</option>
-<option value="alto">Alto</option>
-</select>
-
-<input type="hidden" name="perfil_detectado" id="perfilHidden">
-
-<button type="button" onclick="evaluarPerfil()">Evaluar Perfil</button>
-<button type="submit" id="btnEnviar" style="display:none;">Enviar Evaluación</button>
-
-</form>
-
-<div class="resultado" id="resultadoPerfil"></div>
-
-<div id="mensajeFinal" style="display:none; margin-top:25px; font-weight:bold; font-size:18px;">
-Gracias por confiar en JERS ENTERPRISE.<br><br>
-Hemos recibido su evaluación correctamente.<br>
-Uno de nuestros asesores financieros especializados se comunicará con usted en breve para presentarle una propuesta personalizada acorde a su perfil.
-</div>
-
-</div>
-</section>
-
-<!-- ==================== SIMULADOR PROFESIONAL ==================== -->
-
-<section id="simulador">
-<h2>Simulador Profesional de Inversión</h2>
-
-<div class="sim-box">
-
-<label>Capital de inversión:</label>
-<input type="number" id="montoSim" placeholder="Ingrese monto en dólares">
-
-<label>Plazo:</label>
-<select id="tiempoSim">
-<option value="1">1 Semana (2%)</option>
-<option value="4">1 Mes (8%)</option>
-<option value="12">3 Meses (20%)</option>
-<option value="24">6 Meses (40%)</option>
-<option value="48">12 Meses (85%)</option>
-</select>
-
-<button onclick="calcularSimulador()">Calcular Proyección</button>
-
-<div class="resultado" id="resultadoSimulador"></div>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 JERS ENTERPRISE - Gestión Profesional de Fondos</p>
-<div class="social">
-<a href="#">Facebook</a>
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-<a href="#">WhatsApp</a>
-</div>
-</footer>
-
-<script>
-
-/* SIMULADOR */
-function calcularSimulador(){
-
-let monto = parseFloat(document.getElementById("montoSim").value);
-let tiempo = document.getElementById("tiempoSim").value;
-
-if(!monto || monto <= 0){
-alert("Ingrese un monto válido");
-return;
+#simulador {
+    background: #ececec;
+    padding: 80px 10%;
 }
 
-let porcentajes = {
-1:0.02,
-4:0.08,
-12:0.20,
-24:0.40,
-48:0.85
-};
-
-let porcentaje = porcentajes[tiempo];
-let ganancia = monto * porcentaje;
-let total = monto + ganancia;
-
-document.getElementById("resultadoSimulador").innerHTML =
-"<strong>Resumen de Proyección:</strong><br><br>" +
-"Capital invertido: $" + monto.toFixed(2) + "<br>" +
-"Rendimiento estimado: $" + ganancia.toFixed(2) + "<br>" +
-"Total proyectado: $" + total.toFixed(2);
+#simulador h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #1f1f1f;
 }
 
-
-/* PERFIL */
-function evaluarPerfil(){
-
-let monto = parseFloat(document.getElementById("montoPerfil").value);
-let plazo = document.getElementById("plazoPerfil").value;
-let riesgo = document.getElementById("riesgoPerfil").value;
-
-if(!monto || monto <= 0){
-alert("Ingrese un monto válido");
-return;
+#simulador input,
+#simulador select {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-let puntuacion = 0;
-
-if(monto > 10000){ puntuacion += 2; }
-else if(monto > 3000){ puntuacion += 1; }
-
-if(plazo >= 24){ puntuacion += 2; }
-else if(plazo >= 12){ puntuacion += 1; }
-
-if(riesgo === "alto"){ puntuacion += 2; }
-else if(riesgo === "medio"){ puntuacion += 1; }
-
-let perfil = "";
-
-if(puntuacion <= 2){
-perfil = "Conservador";
-}
-else if(puntuacion <= 4){
-perfil = "Moderado";
-}
-else{
-perfil = "Agresivo";
+#simulador button {
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-document.getElementById("resultadoPerfil").innerHTML =
-"Perfil Detectado: <strong>" + perfil + "</strong>";
-
-document.getElementById("perfilHidden").value = perfil;
-document.getElementById("btnEnviar").style.display = "inline-block";
+#simulador button:hover {
+    background: #0088cc;
 }
-
-/* MENSAJE FINAL */
-document.getElementById("formEvaluacion").addEventListener("submit", function(){
-document.getElementById("mensajeFinal").style.display = "block";
-});
-
-</script>
-
-</body>
