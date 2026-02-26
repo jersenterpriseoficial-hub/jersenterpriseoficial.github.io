@@ -1,177 +1,3 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JERS ENTERPRISE | Gestión Profesional de Inversiones</title>
-
-<style>
-
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body{
-background:#f4f4f4;
-color:#222;
-}
-
-/* HEADER */
-header{
-background:#1f1f1f;
-padding:20px 60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:white;
-}
-
-header h1{
-font-size:22px;
-letter-spacing:1px;
-}
-
-nav ul{
-list-style:none;   /* 🔥 ELIMINA LOS PUNTOS */
-display:flex;
-gap:30px;
-}
-
-nav ul li a{
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:0.3s;
-}
-
-nav ul li a:hover{
-color:#00aaff;
-}
-
-/* SECCIONES */
-section{
-padding:80px 10%;
-text-align:center;
-}
-
-h2{
-font-size:32px;
-margin-bottom:20px;
-color:#1f1f1f;
-}
-
-p{
-max-width:900px;
-margin:0 auto 20px auto;
-line-height:1.7;
-font-size:18px;
-color:#555;
-}
-
-/* INICIO */
-#inicio{
-background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-url('newyork-financial.jpg');
-background-size:cover;
-background-position:center;
-color:white;
-}
-
-#inicio h2{
-color:white;
-font-size:40px;
-}
-
-/* NOSOTROS */
-#nosotros{
-background:#ffffff;
-}
-
-/* QUIENES SOMOS */
-#quienes{
-background:#ececec;
-}
-
-/* NOTICIAS */
-#noticias{
-background:#ffffff;
-}
-
-/* SUSCRIPCIÓN */
-#suscripcion{
-background:#1f1f1f;
-color:white;
-}
-
-input{
-padding:12px;
-width:280px;
-border:none;
-border-radius:5px;
-margin-top:15px;
-}
-
-button{
-padding:12px 25px;
-border:none;
-background:#00aaff;
-color:white;
-border-radius:5px;
-cursor:pointer;
-margin-left:10px;
-transition:0.3s;
-}
-
-button:hover{
-background:#0088cc;
-}
-
-/* SIMULADOR */
-#simulador{
-background:#ececec;
-}
-
-.sim-box{
-background:white;
-padding:40px;
-border-radius:10px;
-max-width:600px;
-margin:30px auto;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-.sim-box input, .sim-box select{
-width:100%;
-margin:10px 0;
-}
-
-.resultado{
-margin-top:20px;
-font-weight:bold;
-font-size:18px;
-}
-
-/* FOOTER */
-footer{
-background:#1f1f1f;
-color:white;
-padding:30px;
-text-align:center;
-}
-
-.social a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-size:20px;
-}
-
-</style>
-</head>
 <body>
 
 <header>
@@ -182,7 +8,7 @@ font-size:20px;
 <li><a href="#nosotros">Nosotros</a></li>
 <li><a href="#quienes">Quiénes Somos</a></li>
 <li><a href="#noticias">Noticias</a></li>
-<li><a href="#suscripcion">Suscríbete</a></li>
+<li><a href="#suscripcion">Evaluación</a></li>
 <li><a href="#simulador">Simulador</a></li>
 </ul>
 </nav>
@@ -190,47 +16,103 @@ font-size:20px;
 
 <section id="inicio">
 <h2>Gestión Estratégica de Inversiones Globales</h2>
-<p>En JERS ENTERPRISE analizamos los principales mercados financieros del mundo para ofrecer oportunidades estructuradas, seguras y con visión de crecimiento sostenible.</p>
+<p>En JERS ENTERPRISE estructuramos oportunidades financieras con análisis macroeconómico, disciplina técnica y visión global de mercados.</p>
 </section>
 
 <section id="nosotros">
 <h2>Nosotros</h2>
-<p>Somos una firma especializada en gestión de capital, análisis macroeconómico y estrategias de inversión diversificadas. Nuestro enfoque combina disciplina financiera, análisis técnico y visión global.</p>
+<p>Firma especializada en gestión de capital, estructuración de portafolios y análisis financiero internacional.</p>
 </section>
 
 <section id="quienes">
 <h2>Quiénes Somos</h2>
-<p>JERS ENTERPRISE es una organización enfocada en la estructuración de inversiones responsables, acompañando a cada cliente según su perfil: conservador, moderado o agresivo.</p>
+<p>Organización dedicada a la gestión profesional de fondos, segmentando estrategias según perfil conservador, moderado o agresivo.</p>
 </section>
 
 <section id="noticias">
 <h2>Noticias Financieras</h2>
-<p>Monitoreamos Wall Street, mercados europeos y asiáticos para mantener informados a nuestros clientes sobre oportunidades de alto impacto financiero.</p>
+<p>Monitoreo constante de Wall Street, Europa y Asia para identificar oportunidades de alto impacto.</p>
 </section>
 
+<!-- ==================== EVALUACIÓN PROFESIONAL ==================== -->
+
 <section id="suscripcion">
-<h2>Suscríbete a Noticias de Alto Impacto</h2>
-<input type="email" placeholder="Ingresa tu correo">
-<button>Suscribirme</button>
+<h2>Evaluación Profesional de Perfil de Inversión</h2>
+
+<div class="sim-box">
+
+<form id="formEvaluacion" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+
+<h3>Datos Personales</h3>
+<input type="text" name="nombre_completo" placeholder="Nombres y Apellidos completos" required>
+<input type="text" name="dni" placeholder="DNI" required>
+<input type="text" name="ciudad" placeholder="Ciudad" required>
+<input type="text" name="pais" placeholder="País" required>
+<input type="email" name="email" placeholder="Correo electrónico" required>
+
+<h3>Información de Inversión</h3>
+
+<label>Monto estimado a invertir:</label>
+<input type="number" id="montoPerfil" name="monto" required>
+
+<label>Plazo de inversión:</label>
+<select id="plazoPerfil" name="plazo" required>
+<option value="1">1 Semana</option>
+<option value="4">1 Mes</option>
+<option value="12">3 Meses</option>
+<option value="24">6 Meses</option>
+<option value="48">12 Meses</option>
+</select>
+
+<label>Nivel de tolerancia al riesgo:</label>
+<select id="riesgoPerfil" name="riesgo" required>
+<option value="bajo">Bajo</option>
+<option value="medio">Medio</option>
+<option value="alto">Alto</option>
+</select>
+
+<input type="hidden" name="perfil_detectado" id="perfilHidden">
+
+<button type="button" onclick="evaluarPerfil()">Evaluar Perfil</button>
+<button type="submit" id="btnEnviar" style="display:none;">Enviar Evaluación</button>
+
+</form>
+
+<div class="resultado" id="resultadoPerfil"></div>
+
+<div id="mensajeFinal" style="display:none; margin-top:25px; font-weight:bold; font-size:18px;">
+Gracias por confiar en JERS ENTERPRISE.<br><br>
+Hemos recibido su evaluación correctamente.<br>
+Uno de nuestros asesores financieros especializados se comunicará con usted en breve para presentarle una propuesta personalizada acorde a su perfil.
+</div>
+
+</div>
 </section>
+
+<!-- ==================== SIMULADOR PROFESIONAL ==================== -->
 
 <section id="simulador">
 <h2>Simulador Profesional de Inversión</h2>
 
 <div class="sim-box">
-<input type="number" id="monto" placeholder="Monto de inversión">
-<select id="tiempo">
+
+<label>Capital de inversión:</label>
+<input type="number" id="montoSim" placeholder="Ingrese monto en dólares">
+
+<label>Plazo:</label>
+<select id="tiempoSim">
 <option value="1">1 Semana (2%)</option>
 <option value="4">1 Mes (8%)</option>
 <option value="12">3 Meses (20%)</option>
 <option value="24">6 Meses (40%)</option>
 <option value="48">12 Meses (85%)</option>
 </select>
-<button onclick="calcular()">Calcular Rendimiento</button>
 
-<div class="resultado" id="resultado"></div>
+<button onclick="calcularSimulador()">Calcular Proyección</button>
+
+<div class="resultado" id="resultadoSimulador"></div>
+
 </div>
-
 </section>
 
 <footer>
@@ -244,11 +126,14 @@ font-size:20px;
 </footer>
 
 <script>
-function calcular(){
-let monto = parseFloat(document.getElementById("monto").value);
-let tiempo = document.getElementById("tiempo").value;
 
-if(!monto){
+/* SIMULADOR */
+function calcularSimulador(){
+
+let monto = parseFloat(document.getElementById("montoSim").value);
+let tiempo = document.getElementById("tiempoSim").value;
+
+if(!monto || monto <= 0){
 alert("Ingrese un monto válido");
 return;
 }
@@ -261,15 +146,65 @@ let porcentajes = {
 48:0.85
 };
 
-let ganancia = monto * porcentajes[tiempo];
+let porcentaje = porcentajes[tiempo];
+let ganancia = monto * porcentaje;
 let total = monto + ganancia;
 
-document.getElementById("resultado").innerHTML =
-"Capital: $" + monto.toFixed(2) +
-"<br>Ganancia: $" + ganancia.toFixed(2) +
-"<br>Total proyectado: $" + total.toFixed(2);
+document.getElementById("resultadoSimulador").innerHTML =
+"<strong>Resumen de Proyección:</strong><br><br>" +
+"Capital invertido: $" + monto.toFixed(2) + "<br>" +
+"Rendimiento estimado: $" + ganancia.toFixed(2) + "<br>" +
+"Total proyectado: $" + total.toFixed(2);
 }
+
+
+/* PERFIL */
+function evaluarPerfil(){
+
+let monto = parseFloat(document.getElementById("montoPerfil").value);
+let plazo = document.getElementById("plazoPerfil").value;
+let riesgo = document.getElementById("riesgoPerfil").value;
+
+if(!monto || monto <= 0){
+alert("Ingrese un monto válido");
+return;
+}
+
+let puntuacion = 0;
+
+if(monto > 10000){ puntuacion += 2; }
+else if(monto > 3000){ puntuacion += 1; }
+
+if(plazo >= 24){ puntuacion += 2; }
+else if(plazo >= 12){ puntuacion += 1; }
+
+if(riesgo === "alto"){ puntuacion += 2; }
+else if(riesgo === "medio"){ puntuacion += 1; }
+
+let perfil = "";
+
+if(puntuacion <= 2){
+perfil = "Conservador";
+}
+else if(puntuacion <= 4){
+perfil = "Moderado";
+}
+else{
+perfil = "Agresivo";
+}
+
+document.getElementById("resultadoPerfil").innerHTML =
+"Perfil Detectado: <strong>" + perfil + "</strong>";
+
+document.getElementById("perfilHidden").value = perfil;
+document.getElementById("btnEnviar").style.display = "inline-block";
+}
+
+/* MENSAJE FINAL */
+document.getElementById("formEvaluacion").addEventListener("submit", function(){
+document.getElementById("mensajeFinal").style.display = "block";
+});
+
 </script>
 
 </body>
-</html>
