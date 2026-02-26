@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JERS ENTERPRISE</title>
 
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background-color:#F4F6F8;
+}
+
+/* HERO */
+.hero{
+    position:relative;
+    height:100vh;
+    color:white;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.slide{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-size:cover;
+    background-position:center;
+    animation:fade 15s infinite;
+}
+
+.slide:nth-child(1){
+    background-image:url('https://images.unsplash.com/photo-1549921296-3a6b0c2d2c6c');
+    animation-delay:0s;
+}
+.slide:nth-child(2){
+    background-image:url('https://images.unsplash.com/photo-1505764706515-aa95265c5abc');
+    animation-delay:5s;
+}
+.slide:nth-child(3){
+    background-image:url('https://images.unsplash.com/photo-1505764706515-aa95265c5abc');
+    animation-delay:10s;
+}
+
+@keyframes fade{
+    0%{opacity:1;}
+    30%{opacity:1;}
+    33%{opacity:0;}
+    100%{opacity:0;}
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    font-size:22px;
+}
+
+.btn{
+    padding:12px 25px;
+    background:#C5A100;
+    color:white;
+    border:none;
+    cursor:pointer;
+    margin:10px;
+    font-weight:bold;
+}
+
+/* SECCIONES */
+.section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.simulador input{
+    padding:10px;
+    width:200px;
+}
+
+footer{
+    background:#2C2F33;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+
+    <div class="hero-content">
+        <h1>JERS ENTERPRISE</h1>
+        <p>Dedicado a la Gestión de Inversiones</p>
+        <button class="btn" onclick="document.getElementById('simulador').scrollIntoView()">Simular Inversión</button>
+        <button class="btn" onclick="document.getElementById('registro').scrollIntoView()">Inscribirme</button>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Sobre Nosotros</h2>
+    <p>Brindamos estrategias financieras estructuradas para inversionistas que buscan crecimiento sólido y sostenido.</p>
+</div>
+
+<div class="section simulador" id="simulador">
+    <h2>Simulación de Inversión</h2>
+    <p>Inversión mínima desde $60 USD</p>
+    <input type="number" id="monto" placeholder="Ingrese monto">
+    <button class="btn" onclick="calcular()">Calcular</button>
+    <h3 id="resultado"></h3>
+</div>
+
+<div class="section" id="registro">
+    <h2>Inscríbete a Eventos y Noticias</h2>
+    <form>
+        <input type="text" placeholder="Nombre" required><br><br>
+        <input type="email" placeholder="Correo electrónico" required><br><br>
+        <button class="btn">Registrarme</button>
+    </form>
+</div>
+
+<footer>
+    © 2026 JERS ENTERPRISE | Gestión Estratégica de Inversiones
+</footer>
+
+<script>
+function calcular(){
+    let monto = document.getElementById("monto").value;
+    let ganancia = monto * 0.20; // 20% ejemplo
+    let total = parseFloat(monto) + ganancia;
+    document.getElementById("resultado").innerHTML =
+    "En 12 meses podrías obtener: $" + total.toFixed(2);
+}
+</script>
+
+</body>
+</html>
