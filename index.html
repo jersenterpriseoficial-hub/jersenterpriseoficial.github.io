@@ -14,11 +14,15 @@
     box-sizing:border-box;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     background:#f4f4f4;
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
 /* ===== HEADER ===== */
@@ -30,12 +34,21 @@ header{
 }
 
 header h1{
-    font-size:clamp(24px,4vw,48px);
+    font-size:clamp(26px,4vw,48px);
 }
 
 header p{
     color:#d4af37;
     font-size:clamp(14px,2vw,18px);
+}
+
+/* MENSAJE DE BIENVENIDA */
+.bienvenida{
+    background:#d4af37;
+    color:black;
+    text-align:center;
+    padding:15px;
+    font-weight:bold;
 }
 
 /* ===== NAVBAR ===== */
@@ -60,7 +73,7 @@ nav a:hover{
 
 /* ===== SECCIONES ===== */
 .section{
-    padding:70px 20px;
+    padding:80px 20px;
 }
 
 .container{
@@ -81,7 +94,6 @@ nav a:hover{
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== GRID RESPONSIVE ===== */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
@@ -100,7 +112,7 @@ nav a:hover{
 .simulador input,
 .simulador select{
     width:100%;
-    max-width:300px;
+    max-width:320px;
     padding:12px;
     margin:10px;
     border:none;
@@ -120,7 +132,6 @@ nav a:hover{
     background:#b7952b;
 }
 
-/* ===== WHATSAPP ===== */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -134,7 +145,6 @@ nav a:hover{
     box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== FOOTER ===== */
 footer{
     background:#1f1f1f;
     color:white;
@@ -142,9 +152,34 @@ footer{
     padding:25px;
 }
 
-@media (max-width: 480px){
-    .simulador input{
-        max-width:100%;
+/* ===== RESPONSIVE PROFESIONAL ===== */
+
+@media (max-width:1024px){
+    .section{
+        padding:60px 20px;
+    }
+}
+
+@media (max-width:768px){
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav a{
+        width:100%;
+        text-align:center;
+        border-top:1px solid #333;
+    }
+}
+
+@media (max-width:480px){
+    header{
+        padding:30px 15px;
+    }
+
+    .simulador{
+        padding:30px 15px;
     }
 }
 
@@ -158,6 +193,10 @@ footer{
     <p>Dedicado a la Gestión de Inversiones</p>
 </header>
 
+<div class="bienvenida">
+✨ Bienvenido a la familia JERS ENTERPRISE ✨
+</div>
+
 <nav>
     <a href="#quienes">Quiénes Somos</a>
     <a href="#quehacemos">Qué Hacemos</a>
@@ -167,108 +206,47 @@ footer{
     <a href="#ubicacion">Ubicación</a>
 </nav>
 
-<!-- CONTRATOS -->
-<section class="section" id="contratos">
+<!-- QUIÉNES SOMOS -->
+<section class="section" id="quienes">
 <div class="container">
-<h2>Contratos de Inversión</h2>
-<div class="grid">
-
+<h2>Quiénes Somos</h2>
 <div class="card">
-<h3>Perfil Agresivo</h3>
-<p>Alta rentabilidad mensual.</p>
-<p>Ideal para jóvenes inversionistas.</p>
-<p><strong>20% mensual</strong></p>
-</div>
-
-<div class="card">
-<h3>Perfil Moderado</h3>
-<p>Equilibrio entre riesgo y estabilidad.</p>
-<p>Ideal para familias.</p>
-<p><strong>12% mensual</strong></p>
-</div>
-
-<div class="card">
-<h3>Perfil Conservador</h3>
-<p>Mayor seguridad financiera.</p>
-<p>Ideal para adultos mayores.</p>
-<p><strong>8% mensual</strong></p>
-</div>
-
+Somos una firma especializada en la gestión estratégica de inversiones privadas.<br>
+Nos enfocamos en la estructuración profesional de capital y crecimiento financiero.<br>
+Brindamos asesoría personalizada según el perfil de cada cliente.<br>
+Operamos bajo principios de disciplina, transparencia y responsabilidad contractual.<br>
+Nuestra prioridad es la confianza y estabilidad a largo plazo.<br>
+Construimos relaciones financieras sólidas y sostenibles.
 </div>
 </div>
 </section>
 
-<!-- SIMULADOR MEJORADO -->
-<section class="section" id="simulador">
+<!-- QUÉ HACEMOS -->
+<section class="section" id="quehacemos">
 <div class="container">
-<h2>Simulador de Inversión</h2>
-<div class="simulador">
-
-<input type="number" id="capital" placeholder="Capital Inicial (S/)">
-
-<select id="tiempo">
-<option value="0.25">1 Semana</option>
-<option value="1">1 Mes</option>
-<option value="2">2 Meses</option>
-<option value="4">4 Meses</option>
-<option value="6">6 Meses</option>
-<option value="12">12 Meses</option>
-<option value="24">24 Meses</option>
-<option value="48">48 Meses</option>
-</select>
-
-<select id="perfil">
-<option value="0.20">Perfil Agresivo (20% mensual)</option>
-<option value="0.12">Perfil Moderado (12% mensual)</option>
-<option value="0.08">Perfil Conservador (8% mensual)</option>
-</select>
-
-<br>
-<button onclick="simular()">Calcular</button>
-<p id="resultado"></p>
-
-</div>
-</div>
-</section>
-
-<section class="section" id="ubicacion">
-<div class="container">
-<h2>Ubicación</h2>
+<h2>Qué Hacemos</h2>
 <div class="card">
-Jr. El Dorado 181, Segundo Piso<br>
-Moyobamba - Perú<br>
-Atención presencial con previa cita.
+Gestionamos capital mediante estrategias financieras estructuradas.<br>
+Realizamos operaciones en distintos sectores económicos.<br>
+Analizamos riesgos y oportunidades de manera técnica y profesional.<br>
+Diseñamos contratos adaptados a cada perfil de inversión.<br>
+Optimizamos rentabilidad bajo planificación estratégica.<br>
+Buscamos crecimiento constante con control financiero.
 </div>
 </div>
 </section>
 
-<footer>
-© 2026 JERS ENTERPRISE - Todos los derechos reservados
-</footer>
-
-<a href="https://wa.me/51901784447" class="whatsapp" target="_blank">💬</a>
-
-<script>
-function simular(){
-
-let capital=parseFloat(document.getElementById("capital").value);
-let tiempo=parseFloat(document.getElementById("tiempo").value);
-let tasa=parseFloat(document.getElementById("perfil").value);
-
-if(isNaN(capital)){
-document.getElementById("resultado").innerText="Ingrese un capital válido.";
-return;
-}
-
-let ganancia=capital*tasa*tiempo;
-let total=capital+ganancia;
-
-document.getElementById("resultado").innerHTML=
-"Ganancia estimada: S/ "+ganancia.toFixed(2)+
-"<br>Total estimado a recibir: S/ "+total.toFixed(2);
-
-}
-</script>
-
-</body>
-</html>
+<!-- VALORES -->
+<section class="section" id="valores">
+<div class="container">
+<h2>Valores</h2>
+<div class="card">
+Actuamos con total transparencia en cada operación financiera.<br>
+Mantenemos disciplina en la gestión de capital.<br>
+Respetamos cada contrato firmado con responsabilidad.<br>
+Fomentamos ética profesional en todas nuestras decisiones.<br>
+Promovemos estabilidad y confianza para nuestros clientes.<br>
+Trabajamos con visión de crecimiento sostenible.
+</div>
+</div>
+</section>
