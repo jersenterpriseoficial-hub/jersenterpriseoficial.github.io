@@ -28,6 +28,11 @@ header{
     text-align:center;
 }
 
+.logo{
+    width:120px;
+    margin-bottom:10px;
+}
+
 header h1{
     font-size:clamp(24px, 4vw, 40px);
     letter-spacing:2px;
@@ -72,12 +77,6 @@ nav a:hover{
     margin-bottom:15px;
 }
 
-.hero p{
-    font-size:clamp(14px, 2vw, 18px);
-    max-width:700px;
-    margin:auto;
-}
-
 /* ===== SECTIONS ===== */
 .section{
     padding:60px 20px;
@@ -104,16 +103,6 @@ nav a:hover{
     border-radius:10px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     text-align:center;
-}
-
-.card h3{
-    margin-bottom:15px;
-    color:#2c2c2c;
-}
-
-.card p{
-    font-size:14px;
-    line-height:1.6;
 }
 
 /* ===== SIMULADOR ===== */
@@ -147,6 +136,35 @@ nav a:hover{
     background:#b7952b;
 }
 
+/* ===== CONTRATO ===== */
+.contrato{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* ===== UBICACION ===== */
+.ubicacion{
+    text-align:center;
+    margin-top:30px;
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px 18px;
+    border-radius:50%;
+    font-size:22px;
+    text-decoration:none;
+    box-shadow:0 5px 10px rgba(0,0,0,0.3);
+}
+
 /* ===== FOOTER ===== */
 footer{
     background:#1f1f1f;
@@ -156,7 +174,6 @@ footer{
     margin-top:40px;
 }
 
-/* ===== RESPONSIVE EXTRA ===== */
 @media(max-width:768px){
     nav{
         flex-direction:column;
@@ -170,20 +187,21 @@ footer{
 <body>
 
 <header>
+    <img src="logo.png" class="logo" alt="JERS ENTERPRISE Logo">
     <h1>JERS ENTERPRISE</h1>
     <p>Dedicado a la Gestión de Inversiones</p>
 </header>
 
 <nav>
     <a href="#">Inicio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Simulador</a>
-    <a href="#">Contacto</a>
+    <a href="#simulador">Simulador</a>
+    <a href="#contrato">Contrato</a>
+    <a href="#contacto">Contacto</a>
 </nav>
 
 <section class="hero">
     <h2>Invierte con Seguridad y Confianza</h2>
-    <p>Ofrecemos contratos de inversión notariados adaptados a tu perfil financiero: conservador, moderado y agresivo.</p>
+    <p>Contratos de inversión notariados adaptados a tu perfil financiero.</p>
 </section>
 
 <section class="section">
@@ -191,26 +209,43 @@ footer{
     <div class="cards">
         <div class="card">
             <h3>Plan Conservador</h3>
-            <p>Ideal para adultos mayores que buscan estabilidad y bajo riesgo.</p>
+            <p>Bajo riesgo y estabilidad.</p>
         </div>
         <div class="card">
             <h3>Plan Moderado</h3>
-            <p>Perfecto para familias que desean equilibrio entre riesgo y rentabilidad.</p>
+            <p>Equilibrio entre riesgo y rentabilidad.</p>
         </div>
         <div class="card">
             <h3>Plan Agresivo</h3>
-            <p>Diseñado para jóvenes que buscan mayor crecimiento financiero.</p>
+            <p>Mayor crecimiento financiero.</p>
         </div>
     </div>
 </section>
 
-<section class="section">
+<section class="section" id="simulador">
     <div class="simulador">
-        <h2>Simulador de Inversión</h2>
-        <input type="number" id="monto" placeholder="Ingrese monto a invertir">
+        <h2>Simulador de Interés Compuesto</h2>
+        <input type="number" id="monto" placeholder="Monto inicial (S/)">
+        <input type="number" id="tasa" placeholder="Tasa anual (%)">
+        <input type="number" id="años" placeholder="Años de inversión">
         <br>
-        <button onclick="simular()">Calcular</button>
+        <button onclick="calcular()">Calcular</button>
         <p id="resultado" style="margin-top:15px;"></p>
+    </div>
+</section>
+
+<section class="section" id="contrato">
+    <div class="contrato">
+        <h2>Contrato Notariado</h2>
+        <p>Todos nuestros contratos son formalizados en notaría con DNI y firma legal, brindando seguridad jurídica a nuestros inversionistas.</p>
+    </div>
+</section>
+
+<section class="section" id="contacto">
+    <div class="ubicacion">
+        <h2>Ubicación</h2>
+        <p>Jr. El Dorado 181, Segundo Piso</p>
+        <p>Atención presencial con previa coordinación.</p>
     </div>
 </section>
 
@@ -218,16 +253,22 @@ footer{
     © 2026 JERS ENTERPRISE - Todos los derechos reservados
 </footer>
 
+<a href="https://wa.me/51999999999" class="whatsapp" target="_blank">💬</a>
+
 <script>
-function simular(){
-    let monto = document.getElementById("monto").value;
-    if(monto === ""){
-        document.getElementById("resultado").innerText = "Ingrese un monto válido.";
+function calcular(){
+    let P = parseFloat(document.getElementById("monto").value);
+    let r = parseFloat(document.getElementById("tasa").value) / 100;
+    let t = parseFloat(document.getElementById("años").value);
+
+    if(isNaN(P) || isNaN(r) || isNaN(t)){
+        document.getElementById("resultado").innerText = "Complete todos los campos correctamente.";
         return;
     }
-    let ganancia = monto * 0.15;
+
+    let A = P * Math.pow((1 + r), t);
     document.getElementById("resultado").innerText =
-        "Ganancia estimada: S/ " + ganancia.toFixed(2);
+        "Monto final estimado: S/ " + A.toFixed(2);
 }
 </script>
 
