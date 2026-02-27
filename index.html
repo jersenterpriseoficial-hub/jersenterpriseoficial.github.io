@@ -1,39 +1,274 @@
-<!-- CONTRATOS DE INVERSIÓN -->
-<section id="contratos" style="padding:50px; text-align:center;">
-  <h2>Contratos de Inversión</h2>
-  <p>Elige el contrato que mejor se adapte a tu perfil financiero</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JERS ENTERPRISE</title>
 
-  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:30px; margin-top:30px;">
+<style>
 
-    <!-- AGRESIVO -->
-    <div style="border:1px solid #ccc; padding:25px; width:280px;">
-      <h3>Perfil Agresivo</h3>
-      <p>✔ Alta rentabilidad</p>
-      <p>✔ Mayor rendimiento mensual</p>
-      <p>✔ Ideal para jóvenes inversionistas</p>
-      <h4>20% mensual</h4>
-      <button onclick="location.href='#simulador'">Simular</button>
-    </div>
+/* ===== RESET ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    <!-- MODERADO -->
-    <div style="border:1px solid #ccc; padding:25px; width:280px;">
-      <h3>Perfil Moderado</h3>
-      <p>✔ Equilibrio riesgo-beneficio</p>
-      <p>✔ Estabilidad y crecimiento</p>
-      <p>✔ Ideal para familias</p>
-      <h4>12% mensual</h4>
-      <button onclick="location.href='#simulador'">Simular</button>
-    </div>
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+}
 
-    <!-- CONSERVADOR -->
-    <div style="border:1px solid #ccc; padding:25px; width:280px;">
-      <h3>Perfil Conservador</h3>
-      <p>✔ Bajo riesgo</p>
-      <p>✔ Seguridad y estabilidad</p>
-      <p>✔ Ideal para adultos mayores</p>
-      <h4>8% mensual</h4>
-      <button onclick="location.href='#simulador'">Simular</button>
-    </div>
+/* ===== HEADER ===== */
+header{
+    background:#2c2c2c;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
 
-  </div>
+header h1{
+    font-size:clamp(24px,4vw,48px);
+}
+
+header p{
+    color:#d4af37;
+    font-size:clamp(14px,2vw,18px);
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    background:#1f1f1f;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    padding:15px 18px;
+    text-decoration:none;
+    font-size:15px;
+}
+
+nav a:hover{
+    background:#d4af37;
+    color:black;
+}
+
+/* ===== SECCIONES ===== */
+.section{
+    padding:70px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:30px;
+    font-size:clamp(22px,3vw,32px);
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== GRID RESPONSIVE ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+}
+
+/* ===== SIMULADOR ===== */
+.simulador{
+    background:#2c2c2c;
+    color:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.simulador input,
+.simulador select{
+    width:100%;
+    max-width:300px;
+    padding:12px;
+    margin:10px;
+    border:none;
+    border-radius:6px;
+}
+
+.simulador button{
+    padding:12px 30px;
+    background:#d4af37;
+    border:none;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.simulador button:hover{
+    background:#b7952b;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    font-size:22px;
+    padding:15px 18px;
+    border-radius:50%;
+    text-decoration:none;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ===== FOOTER ===== */
+footer{
+    background:#1f1f1f;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+@media (max-width: 480px){
+    .simulador input{
+        max-width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>JERS ENTERPRISE</h1>
+    <p>Dedicado a la Gestión de Inversiones</p>
+</header>
+
+<nav>
+    <a href="#quienes">Quiénes Somos</a>
+    <a href="#quehacemos">Qué Hacemos</a>
+    <a href="#valores">Valores</a>
+    <a href="#contratos">Contratos</a>
+    <a href="#simulador">Simulador</a>
+    <a href="#ubicacion">Ubicación</a>
+</nav>
+
+<!-- CONTRATOS -->
+<section class="section" id="contratos">
+<div class="container">
+<h2>Contratos de Inversión</h2>
+<div class="grid">
+
+<div class="card">
+<h3>Perfil Agresivo</h3>
+<p>Alta rentabilidad mensual.</p>
+<p>Ideal para jóvenes inversionistas.</p>
+<p><strong>20% mensual</strong></p>
+</div>
+
+<div class="card">
+<h3>Perfil Moderado</h3>
+<p>Equilibrio entre riesgo y estabilidad.</p>
+<p>Ideal para familias.</p>
+<p><strong>12% mensual</strong></p>
+</div>
+
+<div class="card">
+<h3>Perfil Conservador</h3>
+<p>Mayor seguridad financiera.</p>
+<p>Ideal para adultos mayores.</p>
+<p><strong>8% mensual</strong></p>
+</div>
+
+</div>
+</div>
 </section>
+
+<!-- SIMULADOR MEJORADO -->
+<section class="section" id="simulador">
+<div class="container">
+<h2>Simulador de Inversión</h2>
+<div class="simulador">
+
+<input type="number" id="capital" placeholder="Capital Inicial (S/)">
+
+<select id="tiempo">
+<option value="0.25">1 Semana</option>
+<option value="1">1 Mes</option>
+<option value="2">2 Meses</option>
+<option value="4">4 Meses</option>
+<option value="6">6 Meses</option>
+<option value="12">12 Meses</option>
+<option value="24">24 Meses</option>
+<option value="48">48 Meses</option>
+</select>
+
+<select id="perfil">
+<option value="0.20">Perfil Agresivo (20% mensual)</option>
+<option value="0.12">Perfil Moderado (12% mensual)</option>
+<option value="0.08">Perfil Conservador (8% mensual)</option>
+</select>
+
+<br>
+<button onclick="simular()">Calcular</button>
+<p id="resultado"></p>
+
+</div>
+</div>
+</section>
+
+<section class="section" id="ubicacion">
+<div class="container">
+<h2>Ubicación</h2>
+<div class="card">
+Jr. El Dorado 181, Segundo Piso<br>
+Moyobamba - Perú<br>
+Atención presencial con previa cita.
+</div>
+</div>
+</section>
+
+<footer>
+© 2026 JERS ENTERPRISE - Todos los derechos reservados
+</footer>
+
+<a href="https://wa.me/51901784447" class="whatsapp" target="_blank">💬</a>
+
+<script>
+function simular(){
+
+let capital=parseFloat(document.getElementById("capital").value);
+let tiempo=parseFloat(document.getElementById("tiempo").value);
+let tasa=parseFloat(document.getElementById("perfil").value);
+
+if(isNaN(capital)){
+document.getElementById("resultado").innerText="Ingrese un capital válido.";
+return;
+}
+
+let ganancia=capital*tasa*tiempo;
+let total=capital+ganancia;
+
+document.getElementById("resultado").innerHTML=
+"Ganancia estimada: S/ "+ganancia.toFixed(2)+
+"<br>Total estimado a recibir: S/ "+total.toFixed(2);
+
+}
+</script>
+
+</body>
+</html>
