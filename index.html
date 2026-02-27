@@ -7,11 +7,14 @@
 
 <style>
 
-/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -21,7 +24,6 @@ body{
     line-height:1.6;
 }
 
-/* ===== HEADER ===== */
 header{
     background:#2c2c2c;
     color:white;
@@ -38,7 +40,6 @@ header p{
     font-size:clamp(14px,2vw,18px);
 }
 
-/* ===== NAVBAR ===== */
 nav{
     background:#1f1f1f;
     display:flex;
@@ -58,7 +59,6 @@ nav a:hover{
     color:black;
 }
 
-/* ===== SECCIONES ===== */
 .section{
     padding:70px 20px;
 }
@@ -81,14 +81,12 @@ nav a:hover{
     box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== GRID RESPONSIVE ===== */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
     gap:25px;
 }
 
-/* ===== SIMULADOR ===== */
 .simulador{
     background:#2c2c2c;
     color:white;
@@ -120,7 +118,6 @@ nav a:hover{
     background:#b7952b;
 }
 
-/* ===== WHATSAPP ===== */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -134,7 +131,6 @@ nav a:hover{
     box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* ===== FOOTER ===== */
 footer{
     background:#1f1f1f;
     color:white;
@@ -142,7 +138,7 @@ footer{
     padding:25px;
 }
 
-@media (max-width: 480px){
+@media (max-width:480px){
     .simulador input{
         max-width:100%;
     }
@@ -159,74 +155,106 @@ footer{
 </header>
 
 <nav>
+    <a href="#inicio">Inicio</a>
     <a href="#quienes">Quiénes Somos</a>
     <a href="#quehacemos">Qué Hacemos</a>
     <a href="#valores">Valores</a>
+    <a href="#costos">Costo de los Servicios</a>
     <a href="#contratos">Contratos</a>
     <a href="#simulador">Simulador</a>
     <a href="#ubicacion">Ubicación</a>
 </nav>
+
+<!-- QUIENES SOMOS -->
+<section class="section" id="quienes">
+<div class="container">
+<h2>Quiénes Somos</h2>
+<div class="card">
+JERS ENTERPRISE es un negocio dedicado a gestionar inversiones en nombre de sus clientes.<br><br>
+Nos especializamos en estructurar capital bajo criterios estratégicos y financieros sólidos.<br><br>
+Operamos con disciplina, responsabilidad contractual y transparencia institucional.<br><br>
+Diseñamos soluciones adaptadas a cada perfil financiero.<br><br>
+Nuestra prioridad es proteger y optimizar el capital invertido.<br><br>
+Construimos relaciones financieras sostenibles a largo plazo.
+</div>
+</div>
+</section>
+
+<!-- QUE HACEMOS -->
+<section class="section" id="quehacemos">
+<div class="container">
+<h2>Qué Hacemos</h2>
+<div class="card">
+Trabajamos con transacciones financieras de inversión que generen rendimientos financieros a nuestros clientes.<br><br>
+Analizamos oportunidades bajo criterios técnicos y estratégicos.<br><br>
+Gestionamos capital mediante operaciones estructuradas.<br><br>
+Evaluamos riesgos y proyecciones de crecimiento.<br><br>
+Aplicamos planificación financiera disciplinada.<br><br>
+Buscamos resultados sostenibles y responsables.
+</div>
+</div>
+</section>
+
+<!-- VALORES -->
+<section class="section" id="valores">
+<div class="container">
+<h2>Valores</h2>
+<div class="card">
+Actuamos con absoluta transparencia en cada operación financiera.<br><br>
+Mantenemos disciplina en la gestión de inversiones.<br><br>
+Respetamos cada contrato firmado con responsabilidad.<br><br>
+Promovemos ética profesional en todas nuestras decisiones.<br><br>
+Fomentamos confianza y estabilidad para nuestros clientes.<br><br>
+Trabajamos con visión de crecimiento sostenible.
+</div>
+</div>
+</section>
+
+<!-- COSTOS -->
+<section class="section" id="costos">
+<div class="container">
+<h2>Costo de los Servicios</h2>
+<div class="card">
+<strong>Gestión de Fondos o Negociación:</strong> 35%<br><br>
+<strong>Mantenimiento Administrativo:</strong> 10%<br><br>
+<strong>Transacciones Financieras sobre Ganancias:</strong> 5%<br><br>
+<strong>Servicio de Asesoramiento Financiero:</strong> S/ 50<br><br>
+Estos costos reflejan el servicio profesional, análisis estratégico y gestión estructurada brindada por JERS ENTERPRISE.
+</div>
+</div>
+</section>
 
 <!-- CONTRATOS -->
 <section class="section" id="contratos">
 <div class="container">
 <h2>Contratos de Inversión</h2>
 <div class="grid">
-
-<div class="card">
-<h3>Perfil Agresivo</h3>
-<p>Alta rentabilidad mensual.</p>
-<p>Ideal para jóvenes inversionistas.</p>
-<p><strong>20% mensual</strong></p>
-</div>
-
-<div class="card">
-<h3>Perfil Moderado</h3>
-<p>Equilibrio entre riesgo y estabilidad.</p>
-<p>Ideal para familias.</p>
-<p><strong>12% mensual</strong></p>
-</div>
-
-<div class="card">
-<h3>Perfil Conservador</h3>
-<p>Mayor seguridad financiera.</p>
-<p>Ideal para adultos mayores.</p>
-<p><strong>8% mensual</strong></p>
-</div>
-
+<div class="card"><h3>Perfil Agresivo</h3><p>20% mensual</p></div>
+<div class="card"><h3>Perfil Moderado</h3><p>12% mensual</p></div>
+<div class="card"><h3>Perfil Conservador</h3><p>8% mensual</p></div>
 </div>
 </div>
 </section>
 
-<!-- SIMULADOR MEJORADO -->
+<!-- SIMULADOR -->
 <section class="section" id="simulador">
 <div class="container">
 <h2>Simulador de Inversión</h2>
 <div class="simulador">
-
 <input type="number" id="capital" placeholder="Capital Inicial (S/)">
-
 <select id="tiempo">
-<option value="0.25">1 Semana</option>
 <option value="1">1 Mes</option>
-<option value="2">2 Meses</option>
-<option value="4">4 Meses</option>
 <option value="6">6 Meses</option>
 <option value="12">12 Meses</option>
-<option value="24">24 Meses</option>
-<option value="48">48 Meses</option>
 </select>
-
 <select id="perfil">
-<option value="0.20">Perfil Agresivo (20% mensual)</option>
-<option value="0.12">Perfil Moderado (12% mensual)</option>
-<option value="0.08">Perfil Conservador (8% mensual)</option>
+<option value="0.20">Agresivo</option>
+<option value="0.12">Moderado</option>
+<option value="0.08">Conservador</option>
 </select>
-
 <br>
 <button onclick="simular()">Calcular</button>
 <p id="resultado"></p>
-
 </div>
 </div>
 </section>
@@ -242,6 +270,17 @@ Atención presencial con previa cita.
 </div>
 </section>
 
+<!-- INICIO (FINAL) -->
+<section class="section" id="inicio">
+<div class="container">
+<h2>Inicio</h2>
+<div class="card">
+Gracias por visitar la página oficial de JERS ENTERPRISE.<br><br>
+Esperamos poder trabajar juntos por su futuro financiero próspero.
+</div>
+</div>
+</section>
+
 <footer>
 © 2026 JERS ENTERPRISE - Todos los derechos reservados
 </footer>
@@ -250,23 +289,16 @@ Atención presencial con previa cita.
 
 <script>
 function simular(){
-
 let capital=parseFloat(document.getElementById("capital").value);
 let tiempo=parseFloat(document.getElementById("tiempo").value);
 let tasa=parseFloat(document.getElementById("perfil").value);
-
 if(isNaN(capital)){
 document.getElementById("resultado").innerText="Ingrese un capital válido.";
 return;
 }
-
-let ganancia=capital*tasa*tiempo;
-let total=capital+ganancia;
-
+let total=capital+(capital*tasa*tiempo);
 document.getElementById("resultado").innerHTML=
-"Ganancia estimada: S/ "+ganancia.toFixed(2)+
-"<br>Total estimado a recibir: S/ "+total.toFixed(2);
-
+"Total estimado: S/ "+total.toFixed(2);
 }
 </script>
 
