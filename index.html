@@ -7,6 +7,7 @@
 
 <style>
 
+/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
@@ -20,23 +21,24 @@ body{
     line-height:1.6;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
     background:#2c2c2c;
     color:white;
     text-align:center;
-    padding:30px 20px;
+    padding:40px 20px;
 }
 
 header h1{
-    font-size:clamp(26px,4vw,42px);
+    font-size:clamp(24px,4vw,48px);
 }
 
 header p{
     color:#d4af37;
+    font-size:clamp(14px,2vw,18px);
 }
 
-/* NAV */
+/* ===== NAVBAR ===== */
 nav{
     background:#1f1f1f;
     display:flex;
@@ -46,8 +48,9 @@ nav{
 
 nav a{
     color:white;
-    padding:15px 20px;
+    padding:15px 18px;
     text-decoration:none;
+    font-size:15px;
 }
 
 nav a:hover{
@@ -55,49 +58,59 @@ nav a:hover{
     color:black;
 }
 
-/* SECTIONS */
+/* ===== SECCIONES ===== */
 .section{
-    padding:60px 20px;
-    max-width:1100px;
+    padding:70px 20px;
+}
+
+.container{
+    max-width:1200px;
     margin:auto;
 }
 
 .section h2{
     text-align:center;
-    margin-bottom:25px;
-    font-size:28px;
+    margin-bottom:30px;
+    font-size:clamp(22px,3vw,32px);
 }
 
 .card{
     background:white;
     padding:30px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* SIMULADOR */
+/* ===== GRID RESPONSIVE ===== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+}
+
+/* ===== SIMULADOR ===== */
 .simulador{
     background:#2c2c2c;
     color:white;
     padding:40px;
-    border-radius:10px;
+    border-radius:12px;
     text-align:center;
 }
 
 .simulador input{
     width:100%;
     max-width:300px;
-    padding:10px;
+    padding:12px;
     margin:10px;
     border:none;
-    border-radius:5px;
+    border-radius:6px;
 }
 
 .simulador button{
-    padding:12px 25px;
+    padding:12px 30px;
     background:#d4af37;
     border:none;
-    border-radius:5px;
+    border-radius:6px;
     font-weight:bold;
     cursor:pointer;
 }
@@ -106,7 +119,7 @@ nav a:hover{
     background:#b7952b;
 }
 
-/* WHATSAPP */
+/* ===== WHATSAPP ===== */
 .whatsapp{
     position:fixed;
     bottom:20px;
@@ -117,15 +130,49 @@ nav a:hover{
     padding:15px 18px;
     border-radius:50%;
     text-decoration:none;
-    box-shadow:0 5px 10px rgba(0,0,0,0.3);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
     background:#1f1f1f;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
+}
+
+/* ===== BREAKPOINTS PROFESIONALES ===== */
+
+/* Tablets */
+@media (max-width: 992px){
+    nav{
+        justify-content:center;
+    }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px){
+    header{
+        padding:30px 15px;
+    }
+
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    nav a{
+        width:100%;
+        text-align:center;
+        border-top:1px solid #333;
+    }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px){
+    .simulador input{
+        max-width:100%;
+    }
 }
 
 </style>
@@ -141,7 +188,6 @@ footer{
 <nav>
     <a href="#quienes">Quiénes Somos</a>
     <a href="#quehacemos">Qué Hacemos</a>
-    <a href="#porque">Por Qué lo Hacemos</a>
     <a href="#valores">Valores</a>
     <a href="#vision">Visión</a>
     <a href="#contrato">Contrato</a>
@@ -149,103 +195,80 @@ footer{
     <a href="#ubicacion">Ubicación</a>
 </nav>
 
-<section class="section" id="quienes">
-    <h2>Quiénes Somos</h2>
-    <div class="card">
-        JERS ENTERPRISE es una firma especializada en la gestión estratégica de capitales privados. 
-        Nuestra organización está orientada a brindar soluciones financieras estructuradas, 
-        respaldadas por planificación técnica, disciplina operativa y formalización contractual. 
-        Trabajamos bajo principios de transparencia, responsabilidad y crecimiento sostenible del patrimonio.
-    </div>
+<section class="section">
+<div class="container">
+<h2>Quiénes Somos</h2>
+<div class="card">
+Somos una firma orientada a la gestión estratégica de inversiones privadas, especializada en estructuración de capital, planificación financiera y administración profesional de portafolios.
+</div>
+</div>
 </section>
 
-<section class="section" id="quehacemos">
-    <h2>Qué Hacemos</h2>
-    <div class="card">
-        JERS ENTERPRISE realiza transacciones financieras mediante la compra y venta estratégica 
-        de productos financieros en diversos sectores del mercado. 
-        Aplicamos análisis financiero y diversificación de portafolios para optimizar resultados, 
-        gestionando activamente el capital con enfoque profesional y estructurado.
-    </div>
+<section class="section">
+<div class="container">
+<h2>Qué Hacemos</h2>
+<div class="card">
+Realizamos transacciones financieras mediante la compra y venta estratégica de productos financieros en distintos sectores económicos, buscando optimizar resultados bajo un enfoque estructurado.
+</div>
+</div>
 </section>
 
-<section class="section" id="porque">
-    <h2>Por Qué lo Hacemos</h2>
-    <div class="card">
-        Creemos que una correcta gestión financiera permite transformar el capital en crecimiento sostenible. 
-        Nuestro propósito es brindar a nuestros inversionistas una alternativa estructurada 
-        que combine planificación estratégica, formalidad jurídica y generación de rentabilidad.
-    </div>
-</section>
-
-<section class="section" id="valores">
-    <h2>Valores</h2>
-    <div class="card">
-        • Transparencia<br>
-        • Disciplina financiera<br>
-        • Responsabilidad contractual<br>
-        • Ética profesional<br>
-        • Compromiso con el crecimiento del inversionista
-    </div>
-</section>
-
-<section class="section" id="vision">
-    <h2>Visión</h2>
-    <div class="card">
-        Consolidarnos como una firma referente en gestión de inversiones privadas, 
-        reconocida por su estructura formal, seguridad jurídica y resultados sostenibles en el tiempo.
-    </div>
-</section>
-
-<section class="section" id="contrato">
-    <h2>Contrato Notariado</h2>
-    <div class="card">
-        Todos los contratos son formalizados en notaría con DNI y firma legal, 
-        garantizando seguridad jurídica y respaldo documental para cada inversionista.
-    </div>
+<section class="section">
+<div class="container">
+<h2>Valores</h2>
+<div class="grid">
+<div class="card">Transparencia</div>
+<div class="card">Disciplina Financiera</div>
+<div class="card">Responsabilidad Contractual</div>
+<div class="card">Ética Profesional</div>
+</div>
+</div>
 </section>
 
 <section class="section" id="simulador">
-    <h2>Simulador de Inversión (Interés Compuesto)</h2>
-    <div class="simulador">
-        <input type="number" id="capital" placeholder="Capital Inicial (S/)">
-        <input type="number" id="tasa" placeholder="Tasa Anual (%)">
-        <input type="number" id="años" placeholder="Años">
-        <br>
-        <button onclick="simular()">Calcular</button>
-        <p id="resultado"></p>
-    </div>
+<div class="container">
+<h2>Simulador de Inversión</h2>
+<div class="simulador">
+<input type="number" id="capital" placeholder="Capital Inicial (S/)">
+<input type="number" id="tasa" placeholder="Tasa Anual (%)">
+<input type="number" id="años" placeholder="Años">
+<br>
+<button onclick="simular()">Calcular</button>
+<p id="resultado"></p>
+</div>
+</div>
 </section>
 
 <section class="section" id="ubicacion">
-    <h2>Ubicación</h2>
-    <div class="card">
-        Jr. El Dorado 181, Segundo Piso<br>
-        Moyobamba - Perú<br>
-        Atención presencial con previa cita.
-    </div>
+<div class="container">
+<h2>Ubicación</h2>
+<div class="card">
+Jr. El Dorado 181, Segundo Piso<br>
+Moyobamba - Perú<br>
+Atención presencial con previa cita.
+</div>
+</div>
 </section>
 
 <footer>
-    © 2026 JERS ENTERPRISE - Todos los derechos reservados
+© 2026 JERS ENTERPRISE - Todos los derechos reservados
 </footer>
 
-<a href="https://wa.me/519XXXXXXXX?text=Hola%20quiero%20información%20sobre%20inversiones" class="whatsapp" target="_blank">💬</a>
+<a href="https://wa.me/51901784447" class="whatsapp" target="_blank">💬</a>
 
 <script>
 function simular(){
-    let P = parseFloat(document.getElementById("capital").value);
-    let r = parseFloat(document.getElementById("tasa").value)/100;
-    let t = parseFloat(document.getElementById("años").value);
+let P=parseFloat(document.getElementById("capital").value);
+let r=parseFloat(document.getElementById("tasa").value)/100;
+let t=parseFloat(document.getElementById("años").value);
 
-    if(isNaN(P) || isNaN(r) || isNaN(t)){
-        document.getElementById("resultado").innerText="Complete todos los campos.";
-        return;
-    }
+if(isNaN(P)||isNaN(r)||isNaN(t)){
+document.getElementById("resultado").innerText="Complete todos los campos.";
+return;
+}
 
-    let A = P * Math.pow((1+r), t);
-    document.getElementById("resultado").innerText =
-    "Monto final estimado: S/ " + A.toFixed(2);
+let A=P*Math.pow((1+r),t);
+document.getElementById("resultado").innerText="Monto final estimado: S/ "+A.toFixed(2);
 }
 </script>
 
