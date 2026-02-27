@@ -65,11 +65,24 @@ nav a:hover{
 }
 
 /* ===== HERO ===== */
-.hero{
-    padding:60px 20px;
-    text-align:center;
-    background:linear-gradient(to right,#3a3a3a,#1f1f1f);
-    color:white;
+<section class="hero">
+
+    <h2 id="titulo-seccion">Bienvenido a JERS ENTERPRISE</h2>
+
+    <p id="contenido-seccion">
+        Le damos la bienvenida a JERS ENTERPRISE, una firma dedicada a la gestión estratégica de inversiones,
+        enfocada en generar crecimiento sostenible, protección patrimonial y oportunidades financieras
+        estructuradas bajo contratos formales y planificación profesional.
+    </p>
+
+    <div style="margin-top:30px;">
+        <button onclick="mostrarInicio()" class="btn">Inicio</button>
+        <button onclick="mostrarQuienes()" class="btn">Quiénes Somos</button>
+        <button onclick="mostrarQueHacemos()" class="btn">Qué Hacemos</button>
+        <button onclick="mostrarCostos()" class="btn">Costo de los Servicios</button>
+    </div>
+
+</section>
 }
 
 .hero h2{
@@ -181,7 +194,20 @@ footer{
     }
 }
 
-</style>
+.btn{
+    padding:12px 20px;
+    margin:5px;
+    border:none;
+    border-radius:5px;
+    background:#d4af37;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn:hover{
+    background:#b7952b;
+} </style>
 </head>
 
 <body>
@@ -257,13 +283,33 @@ footer{
 
 <script>
 function calcular(){
-    let P = parseFloat(document.getElementById("monto").value);
-    let r = parseFloat(document.getElementById("tasa").value) / 100;
-    let t = parseFloat(document.getElementById("años").value);
+    <script>
 
-    if(isNaN(P) || isNaN(r) || isNaN(t)){
-        document.getElementById("resultado").innerText = "Complete todos los campos correctamente.";
-        return;
+function mostrarInicio(){
+    document.getElementById("titulo-seccion").innerText = "Bienvenido a JERS ENTERPRISE";
+    document.getElementById("contenido-seccion").innerText =
+    "Le damos la bienvenida a JERS ENTERPRISE, una firma especializada en la estructuración y gestión estratégica de inversiones. Nuestra misión es brindar soluciones financieras sólidas, con enfoque en la seguridad jurídica, planificación patrimonial y crecimiento sostenible del capital de nuestros inversionistas.";
+}
+
+function mostrarQuienes(){
+    document.getElementById("titulo-seccion").innerText = "Quiénes Somos";
+    document.getElementById("contenido-seccion").innerText =
+    "JERS ENTERPRISE es una organización orientada a la gestión profesional de capitales privados, con enfoque estratégico en el análisis financiero, diversificación de portafolios y optimización de rendimientos. Trabajamos bajo principios de transparencia, disciplina financiera y planificación estructurada, ofreciendo a nuestros clientes un modelo de inversión formalizado mediante contratos notariados. Nuestro compromiso es construir relaciones de confianza a largo plazo, asegurando estabilidad, crecimiento progresivo y respaldo legal en cada operación realizada.";
+}
+
+function mostrarQueHacemos(){
+    document.getElementById("titulo-seccion").innerText = "Qué Hacemos";
+    document.getElementById("contenido-seccion").innerText =
+    "JERS ENTERPRISE realiza transacciones financieras mediante la compra y venta estratégica de productos financieros pertenecientes a diversos sectores del mercado. Aplicamos análisis técnico y estructuración de portafolios diversificados para aprovechar oportunidades de rentabilidad en distintos entornos económicos. Nuestro enfoque se centra en la gestión activa del capital, buscando maximizar resultados mediante planificación, evaluación de riesgo y ejecución disciplinada de operaciones financieras.";
+}
+
+function mostrarCostos(){
+    document.getElementById("titulo-seccion").innerText = "Costo de los Servicios";
+    document.getElementById("contenido-seccion").innerText =
+    "Nuestros honorarios están estructurados bajo un modelo transparente y basado en desempeño. Se aplica un 35% sobre la ganancia obtenida por el servicio de Gestión de Fondo, un 10% correspondiente al mantenimiento y administración del portafolio de inversión, y un 5% destinado a cubrir los costos operativos de transacción. Es importante destacar que el inversionista conserva su capital inicial y recibe su rentabilidad neta, la cual se suma al capital, permitiendo el crecimiento progresivo del patrimonio bajo una estructura formal y planificada.";
+}
+
+</script>
     }
 
     let A = P * Math.pow((1 + r), t);
