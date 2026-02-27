@@ -3,271 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JERS ENTERPRISE | Gestión Profesional de Inversiones</title>
+<title>JERS ENTERPRISE</title>
 
 <style>
 
-/* RESET */
+/* ===== RESET ===== */
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
-background:#f4f4f4;
-color:#222;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+    color:#333;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header{
-background:#1f1f1f;
-padding:20px 60px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-color:white;
+    background:#2c2c2c;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
 header h1{
-font-size:22px;
-letter-spacing:1px;
+    font-size:clamp(24px, 4vw, 40px);
+    letter-spacing:2px;
 }
 
-nav ul{
-list-style:none;   /* 🔥 ELIMINA LOS PUNTOS */
-display:flex;
-gap:30px;
+header p{
+    font-size:clamp(14px, 2vw, 18px);
+    color:#d4af37;
 }
 
-nav ul li a{
-text-decoration:none;
-color:white;
-font-weight:500;
-transition:0.3s;
+/* ===== NAV ===== */
+nav{
+    background:#1f1f1f;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-nav ul li a:hover{
-color:#00aaff;
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    display:block;
+    font-size:16px;
 }
 
-/* SECCIONES */
-section{
-padding:80px 10%;
-text-align:center;
+nav a:hover{
+    background:#d4af37;
+    color:black;
 }
 
-h2{
-font-size:32px;
-margin-bottom:20px;
-color:#1f1f1f;
+/* ===== HERO ===== */
+.hero{
+    padding:60px 20px;
+    text-align:center;
+    background:linear-gradient(to right,#3a3a3a,#1f1f1f);
+    color:white;
 }
 
-p{
-max-width:900px;
-margin:0 auto 20px auto;
-line-height:1.7;
-font-size:18px;
-color:#555;
+.hero h2{
+    font-size:clamp(22px, 4vw, 36px);
+    margin-bottom:15px;
 }
 
-/* INICIO */
-#inicio{
-background:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-url('newyork-financial.jpg');
-background-size:cover;
-background-position:center;
-color:white;
+.hero p{
+    font-size:clamp(14px, 2vw, 18px);
+    max-width:700px;
+    margin:auto;
 }
 
-#inicio h2{
-color:white;
-font-size:40px;
+/* ===== SECTIONS ===== */
+.section{
+    padding:60px 20px;
+    max-width:1100px;
+    margin:auto;
 }
 
-/* NOSOTROS */
-#nosotros{
-background:#ffffff;
+.section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:clamp(22px, 3vw, 32px);
 }
 
-/* QUIENES SOMOS */
-#quienes{
-background:#ececec;
+/* ===== CARDS ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
 }
 
-/* NOTICIAS */
-#noticias{
-background:#ffffff;
+.card{
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
 }
 
-/* SUSCRIPCIÓN */
-#suscripcion{
-background:#1f1f1f;
-color:white;
+.card h3{
+    margin-bottom:15px;
+    color:#2c2c2c;
 }
 
-input{
-padding:12px;
-width:280px;
-border:none;
-border-radius:5px;
-margin-top:15px;
+.card p{
+    font-size:14px;
+    line-height:1.6;
 }
 
-button{
-padding:12px 25px;
-border:none;
-background:#00aaff;
-color:white;
-border-radius:5px;
-cursor:pointer;
-margin-left:10px;
-transition:0.3s;
+/* ===== SIMULADOR ===== */
+.simulador{
+    background:#2c2c2c;
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+    border-radius:10px;
 }
 
-button:hover{
-background:#0088cc;
+.simulador input{
+    padding:10px;
+    width:100%;
+    max-width:300px;
+    margin:10px 0;
+    border:none;
+    border-radius:5px;
 }
 
-/* SIMULADOR */
-#simulador{
-background:#ececec;
+.simulador button{
+    padding:12px 25px;
+    background:#d4af37;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
-.sim-box{
-background:white;
-padding:40px;
-border-radius:10px;
-max-width:600px;
-margin:30px auto;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+.simulador button:hover{
+    background:#b7952b;
 }
 
-.sim-box input, .sim-box select{
-width:100%;
-margin:10px 0;
-}
-
-.resultado{
-margin-top:20px;
-font-weight:bold;
-font-size:18px;
-}
-
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer{
-background:#1f1f1f;
-color:white;
-padding:30px;
-text-align:center;
+    background:#1f1f1f;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
 }
 
-.social a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-size:20px;
+/* ===== RESPONSIVE EXTRA ===== */
+@media(max-width:768px){
+    nav{
+        flex-direction:column;
+        align-items:center;
+    }
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>JERS ENTERPRISE</h1>
-<nav>
-<ul>
-<li><a href="#inicio">Inicio</a></li>
-<li><a href="#nosotros">Nosotros</a></li>
-<li><a href="#quienes">Quiénes Somos</a></li>
-<li><a href="#noticias">Noticias</a></li>
-<li><a href="#suscripcion">Suscríbete</a></li>
-<li><a href="#simulador">Simulador</a></li>
-</ul>
-</nav>
+    <h1>JERS ENTERPRISE</h1>
+    <p>Dedicado a la Gestión de Inversiones</p>
 </header>
 
-<section id="inicio">
-<h2>Gestión Estratégica de Inversiones Globales</h2>
-<p>En JERS ENTERPRISE analizamos los principales mercados financieros del mundo para ofrecer oportunidades estructuradas, seguras y con visión de crecimiento sostenible.</p>
+<nav>
+    <a href="#">Inicio</a>
+    <a href="#">Servicios</a>
+    <a href="#">Simulador</a>
+    <a href="#">Contacto</a>
+</nav>
+
+<section class="hero">
+    <h2>Invierte con Seguridad y Confianza</h2>
+    <p>Ofrecemos contratos de inversión notariados adaptados a tu perfil financiero: conservador, moderado y agresivo.</p>
 </section>
 
-<section id="nosotros">
-<h2>Nosotros</h2>
-<p>Somos una firma especializada en gestión de capital, análisis macroeconómico y estrategias de inversión diversificadas. Nuestro enfoque combina disciplina financiera, análisis técnico y visión global.</p>
+<section class="section">
+    <h2>Tipos de Inversión</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Plan Conservador</h3>
+            <p>Ideal para adultos mayores que buscan estabilidad y bajo riesgo.</p>
+        </div>
+        <div class="card">
+            <h3>Plan Moderado</h3>
+            <p>Perfecto para familias que desean equilibrio entre riesgo y rentabilidad.</p>
+        </div>
+        <div class="card">
+            <h3>Plan Agresivo</h3>
+            <p>Diseñado para jóvenes que buscan mayor crecimiento financiero.</p>
+        </div>
+    </div>
 </section>
 
-<section id="quienes">
-<h2>Quiénes Somos</h2>
-<p>JERS ENTERPRISE es una organización enfocada en la estructuración de inversiones responsables, acompañando a cada cliente según su perfil: conservador, moderado o agresivo.</p>
-</section>
-
-<section id="noticias">
-<h2>Noticias Financieras</h2>
-<p>Monitoreamos Wall Street, mercados europeos y asiáticos para mantener informados a nuestros clientes sobre oportunidades de alto impacto financiero.</p>
-</section>
-
-<section id="suscripcion">
-<h2>Suscríbete a Noticias de Alto Impacto</h2>
-<input type="email" placeholder="Ingresa tu correo">
-<button>Suscribirme</button>
-</section>
-
-<section id="simulador">
-<h2>Simulador Profesional de Inversión</h2>
-
-<div class="sim-box">
-<input type="number" id="monto" placeholder="Monto de inversión">
-<select id="tiempo">
-<option value="1">1 Semana (2%)</option>
-<option value="4">1 Mes (8%)</option>
-<option value="12">3 Meses (20%)</option>
-<option value="24">6 Meses (40%)</option>
-<option value="48">12 Meses (85%)</option>
-</select>
-<button onclick="calcular()">Calcular Rendimiento</button>
-
-<div class="resultado" id="resultado"></div>
-</div>
-
+<section class="section">
+    <div class="simulador">
+        <h2>Simulador de Inversión</h2>
+        <input type="number" id="monto" placeholder="Ingrese monto a invertir">
+        <br>
+        <button onclick="simular()">Calcular</button>
+        <p id="resultado" style="margin-top:15px;"></p>
+    </div>
 </section>
 
 <footer>
-<p>© 2026 JERS ENTERPRISE - Gestión Profesional de Fondos</p>
-<div class="social">
-<a href="#">Facebook</a>
-<a href="#">Instagram</a>
-<a href="#">LinkedIn</a>
-<a href="#">WhatsApp</a>
-</div>
+    © 2026 JERS ENTERPRISE - Todos los derechos reservados
 </footer>
 
 <script>
-function calcular(){
-let monto = parseFloat(document.getElementById("monto").value);
-let tiempo = document.getElementById("tiempo").value;
-
-if(!monto){
-alert("Ingrese un monto válido");
-return;
-}
-
-let porcentajes = {
-1:0.02,
-4:0.08,
-12:0.20,
-24:0.40,
-48:0.85
-};
-
-let ganancia = monto * porcentajes[tiempo];
-let total = monto + ganancia;
-
-document.getElementById("resultado").innerHTML =
-"Capital: $" + monto.toFixed(2) +
-"<br>Ganancia: $" + ganancia.toFixed(2) +
-"<br>Total proyectado: $" + total.toFixed(2);
+function simular(){
+    let monto = document.getElementById("monto").value;
+    if(monto === ""){
+        document.getElementById("resultado").innerText = "Ingrese un monto válido.";
+        return;
+    }
+    let ganancia = monto * 0.15;
+    document.getElementById("resultado").innerText =
+        "Ganancia estimada: S/ " + ganancia.toFixed(2);
 }
 </script>
 
