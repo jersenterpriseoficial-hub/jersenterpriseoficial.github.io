@@ -28,11 +28,6 @@ header{
     text-align:center;
 }
 
-.logo{
-    width:120px;
-    margin-bottom:10px;
-}
-
 header h1{
     font-size:clamp(24px, 4vw, 40px);
     letter-spacing:2px;
@@ -65,29 +60,22 @@ nav a:hover{
 }
 
 /* ===== HERO ===== */
-<section class="hero">
-
-    <h2 id="titulo-seccion">Bienvenido a JERS ENTERPRISE</h2>
-
-    <p id="contenido-seccion">
-        Le damos la bienvenida a JERS ENTERPRISE, una firma dedicada a la gestión estratégica de inversiones,
-        enfocada en generar crecimiento sostenible, protección patrimonial y oportunidades financieras
-        estructuradas bajo contratos formales y planificación profesional.
-    </p>
-
-    <div style="margin-top:30px;">
-        <button onclick="mostrarInicio()" class="btn">Inicio</button>
-        <button onclick="mostrarQuienes()" class="btn">Quiénes Somos</button>
-        <button onclick="mostrarQueHacemos()" class="btn">Qué Hacemos</button>
-        <button onclick="mostrarCostos()" class="btn">Costo de los Servicios</button>
-    </div>
-
-</section>
+.hero{
+    padding:60px 20px;
+    text-align:center;
+    background:linear-gradient(to right,#3a3a3a,#1f1f1f);
+    color:white;
 }
 
 .hero h2{
     font-size:clamp(22px, 4vw, 36px);
     margin-bottom:15px;
+}
+
+.hero p{
+    font-size:clamp(14px, 2vw, 18px);
+    max-width:700px;
+    margin:auto;
 }
 
 /* ===== SECTIONS ===== */
@@ -116,6 +104,16 @@ nav a:hover{
     border-radius:10px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
     text-align:center;
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#2c2c2c;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.6;
 }
 
 /* ===== SIMULADOR ===== */
@@ -149,35 +147,6 @@ nav a:hover{
     background:#b7952b;
 }
 
-/* ===== CONTRATO ===== */
-.contrato{
-    background:white;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-/* ===== UBICACION ===== */
-.ubicacion{
-    text-align:center;
-    margin-top:30px;
-}
-
-/* ===== WHATSAPP FLOAT ===== */
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px 18px;
-    border-radius:50%;
-    font-size:22px;
-    text-decoration:none;
-    box-shadow:0 5px 10px rgba(0,0,0,0.3);
-}
-
 /* ===== FOOTER ===== */
 footer{
     background:#1f1f1f;
@@ -187,6 +156,7 @@ footer{
     margin-top:40px;
 }
 
+/* ===== RESPONSIVE EXTRA ===== */
 @media(max-width:768px){
     nav{
         flex-direction:column;
@@ -194,40 +164,26 @@ footer{
     }
 }
 
-.btn{
-    padding:12px 20px;
-    margin:5px;
-    border:none;
-    border-radius:5px;
-    background:#d4af37;
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.btn:hover{
-    background:#b7952b;
-} </style>
+</style>
 </head>
 
 <body>
 
 <header>
-    <img src="logo.png" class="logo" alt="JERS ENTERPRISE Logo">
     <h1>JERS ENTERPRISE</h1>
     <p>Dedicado a la Gestión de Inversiones</p>
 </header>
 
 <nav>
     <a href="#">Inicio</a>
-    <a href="#simulador">Simulador</a>
-    <a href="#contrato">Contrato</a>
-    <a href="#contacto">Contacto</a>
+    <a href="#">Servicios</a>
+    <a href="#">Simulador</a>
+    <a href="#">Contacto</a>
 </nav>
 
 <section class="hero">
     <h2>Invierte con Seguridad y Confianza</h2>
-    <p>Contratos de inversión notariados adaptados a tu perfil financiero.</p>
+    <p>Ofrecemos contratos de inversión notariados adaptados a tu perfil financiero: conservador, moderado y agresivo.</p>
 </section>
 
 <section class="section">
@@ -235,43 +191,26 @@ footer{
     <div class="cards">
         <div class="card">
             <h3>Plan Conservador</h3>
-            <p>Bajo riesgo y estabilidad.</p>
+            <p>Ideal para adultos mayores que buscan estabilidad y bajo riesgo.</p>
         </div>
         <div class="card">
             <h3>Plan Moderado</h3>
-            <p>Equilibrio entre riesgo y rentabilidad.</p>
+            <p>Perfecto para familias que desean equilibrio entre riesgo y rentabilidad.</p>
         </div>
         <div class="card">
             <h3>Plan Agresivo</h3>
-            <p>Mayor crecimiento financiero.</p>
+            <p>Diseñado para jóvenes que buscan mayor crecimiento financiero.</p>
         </div>
     </div>
 </section>
 
-<section class="section" id="simulador">
+<section class="section">
     <div class="simulador">
-        <h2>Simulador de Interés Compuesto</h2>
-        <input type="number" id="monto" placeholder="Monto inicial (S/)">
-        <input type="number" id="tasa" placeholder="Tasa anual (%)">
-        <input type="number" id="años" placeholder="Años de inversión">
+        <h2>Simulador de Inversión</h2>
+        <input type="number" id="monto" placeholder="Ingrese monto a invertir">
         <br>
-        <button onclick="calcular()">Calcular</button>
+        <button onclick="simular()">Calcular</button>
         <p id="resultado" style="margin-top:15px;"></p>
-    </div>
-</section>
-
-<section class="section" id="contrato">
-    <div class="contrato">
-        <h2>Contrato Notariado</h2>
-        <p>Todos nuestros contratos son formalizados en notaría con DNI y firma legal, brindando seguridad jurídica a nuestros inversionistas.</p>
-    </div>
-</section>
-
-<section class="section" id="contacto">
-    <div class="ubicacion">
-        <h2>Ubicación</h2>
-        <p>Jr. El Dorado 181, Segundo Piso Moyobamba - Perú. </p>
-        <p>Atención presencial con previa cita.</p>
     </div>
 </section>
 
@@ -279,76 +218,18 @@ footer{
     © 2026 JERS ENTERPRISE - Todos los derechos reservados
 </footer>
 
-<a href="https://wa.me/51901784447" class="whatsapp" target="_blank">💬</a>
-
 <script>
-function calcular(){
-    <script>
-
-function mostrarInicio(){
-    document.getElementById("titulo-seccion").innerText = "Bienvenido a JERS ENTERPRISE";
-    document.getElementById("contenido-seccion").innerText =
-    "Le damos la bienvenida a JERS ENTERPRISE, una firma especializada en la estructuración y gestión estratégica de inversiones. Nuestra misión es brindar soluciones financieras sólidas, con enfoque en la seguridad jurídica, planificación patrimonial y crecimiento sostenible del capital de nuestros inversionistas.";
-}
-
-function mostrarQuienes(){
-    document.getElementById("titulo-seccion").innerText = "Quiénes Somos";
-    document.getElementById("contenido-seccion").innerText =
-    "JERS ENTERPRISE es una organización orientada a la gestión profesional de capitales privados, con enfoque estratégico en el análisis financiero, diversificación de portafolios y optimización de rendimientos. Trabajamos bajo principios de transparencia, disciplina financiera y planificación estructurada, ofreciendo a nuestros clientes un modelo de inversión formalizado mediante contratos notariados. Nuestro compromiso es construir relaciones de confianza a largo plazo, asegurando estabilidad, crecimiento progresivo y respaldo legal en cada operación realizada.";
-}
-
-function mostrarQueHacemos(){
-    document.getElementById("titulo-seccion").innerText = "Qué Hacemos";
-    document.getElementById("contenido-seccion").innerText =
-    "JERS ENTERPRISE realiza transacciones financieras mediante la compra y venta estratégica de productos financieros pertenecientes a diversos sectores del mercado. Aplicamos análisis técnico y estructuración de portafolios diversificados para aprovechar oportunidades de rentabilidad en distintos entornos económicos. Nuestro enfoque se centra en la gestión activa del capital, buscando maximizar resultados mediante planificación, evaluación de riesgo y ejecución disciplinada de operaciones financieras.";
-}
-
-function mostrarCostos(){
-    document.getElementById("titulo-seccion").innerText = "Costo de los Servicios";
-    document.getElementById("contenido-seccion").innerText =
-    "Nuestros honorarios están estructurados bajo un modelo transparente y basado en desempeño. Se aplica un 35% sobre la ganancia obtenida por el servicio de Gestión de Fondo, un 10% correspondiente al mantenimiento y administración del portafolio de inversión, y un 5% destinado a cubrir los costos operativos de transacción. Es importante destacar que el inversionista conserva su capital inicial y recibe su rentabilidad neta, la cual se suma al capital, permitiendo el crecimiento progresivo del patrimonio bajo una estructura formal y planificada.";
-}
-<script>
-
-function calcular(){
-    let P = parseFloat(document.getElementById("monto").value);
-    let r = parseFloat(document.getElementById("tasa").value) / 100;
-    let t = parseFloat(document.getElementById("años").value);
-
-    if(isNaN(P) || isNaN(r) || isNaN(t)){
-        document.getElementById("resultado").innerText = "Complete todos los campos correctamente.";
+function simular(){
+    let monto = document.getElementById("monto").value;
+    if(monto === ""){
+        document.getElementById("resultado").innerText = "Ingrese un monto válido.";
         return;
     }
-
-    let A = P * Math.pow((1 + r), t);
+    let ganancia = monto * 0.15;
     document.getElementById("resultado").innerText =
-        "Monto final estimado: S/ " + A.toFixed(2);
+        "Ganancia estimada: S/ " + ganancia.toFixed(2);
 }
-
-
-function mostrarInicio(){
-    document.getElementById("titulo-seccion").innerText = "Bienvenido a JERS ENTERPRISE";
-    document.getElementById("contenido-seccion").innerText =
-    "Le damos la bienvenida a JERS ENTERPRISE, una firma especializada en la estructuración y gestión estratégica de inversiones.";
-}
-
-function mostrarQuienes(){
-    document.getElementById("titulo-seccion").innerText = "Quiénes Somos";
-    document.getElementById("contenido-seccion").innerText =
-    "JERS ENTERPRISE es una organización orientada a la gestión profesional de capitales privados...";
-}
-
-function mostrarQueHacemos(){
-    document.getElementById("titulo-seccion").innerText = "Qué Hacemos";
-    document.getElementById("contenido-seccion").innerText =
-    "Realizamos transacciones financieras mediante la compra y venta estratégica de productos financieros.";
-}
-
-function mostrarCostos(){
-    document.getElementById("titulo-seccion").innerText = "Costo de los Servicios";
-    document.getElementById("contenido-seccion").innerText =
-    "Se aplica un 35% sobre la ganancia por Gestión de Fondo, 10% por mantenimiento del portafolio y 5% por costos operativos.";
-}
+</script>
 
 </body>
 </html>
