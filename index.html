@@ -316,7 +316,47 @@ function mostrarCostos(){
     document.getElementById("resultado").innerText =
         "Monto final estimado: S/ " + A.toFixed(2);
 }
-</script>
+<script>
+
+function calcular(){
+    let P = parseFloat(document.getElementById("monto").value);
+    let r = parseFloat(document.getElementById("tasa").value) / 100;
+    let t = parseFloat(document.getElementById("años").value);
+
+    if(isNaN(P) || isNaN(r) || isNaN(t)){
+        document.getElementById("resultado").innerText = "Complete todos los campos correctamente.";
+        return;
+    }
+
+    let A = P * Math.pow((1 + r), t);
+    document.getElementById("resultado").innerText =
+        "Monto final estimado: S/ " + A.toFixed(2);
+}
+
+
+function mostrarInicio(){
+    document.getElementById("titulo-seccion").innerText = "Bienvenido a JERS ENTERPRISE";
+    document.getElementById("contenido-seccion").innerText =
+    "Le damos la bienvenida a JERS ENTERPRISE, una firma especializada en la estructuración y gestión estratégica de inversiones.";
+}
+
+function mostrarQuienes(){
+    document.getElementById("titulo-seccion").innerText = "Quiénes Somos";
+    document.getElementById("contenido-seccion").innerText =
+    "JERS ENTERPRISE es una organización orientada a la gestión profesional de capitales privados...";
+}
+
+function mostrarQueHacemos(){
+    document.getElementById("titulo-seccion").innerText = "Qué Hacemos";
+    document.getElementById("contenido-seccion").innerText =
+    "Realizamos transacciones financieras mediante la compra y venta estratégica de productos financieros.";
+}
+
+function mostrarCostos(){
+    document.getElementById("titulo-seccion").innerText = "Costo de los Servicios";
+    document.getElementById("contenido-seccion").innerText =
+    "Se aplica un 35% sobre la ganancia por Gestión de Fondo, 10% por mantenimiento del portafolio y 5% por costos operativos.";
+}
 
 </body>
 </html>
