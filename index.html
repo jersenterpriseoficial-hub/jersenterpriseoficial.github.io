@@ -6,166 +6,60 @@
 <title>JERS ENTERPRISE</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family: Arial, Helvetica, sans-serif;background:#f4f4f4;color:#333;line-height:1.6;}
+header{background:#2c2c2c;color:white;text-align:center;padding:40px 20px;}
+header h1{font-size:clamp(24px,4vw,48px);}
+header p{color:#d4af37;font-size:clamp(14px,2vw,18px);}
+nav{background:#1f1f1f;display:flex;justify-content:center;flex-wrap:wrap;}
+nav a{color:white;padding:15px 18px;text-decoration:none;font-size:15px;}
+nav a:hover{background:#d4af37;color:black;}
+.section{padding:70px 20px;}
+.container{max-width:1200px;margin:auto;}
+.section h2{text-align:center;margin-bottom:30px;font-size:clamp(22px,3vw,32px);}
+.card{background:white;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+.grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:25px;}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f4f4f4;
-    color:#333;
-    line-height:1.6;
-}
-
-header{
-    background:#2c2c2c;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-}
-
-header h1{
-    font-size:clamp(24px,4vw,48px);
-}
-
-header p{
-    color:#d4af37;
-    font-size:clamp(14px,2vw,18px);
-}
-
-nav{
-    background:#1f1f1f;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-nav a{
-    color:white;
-    padding:15px 18px;
-    text-decoration:none;
-    font-size:15px;
-}
-
-nav a:hover{
-    background:#d4af37;
-    color:black;
-}
-
-.section{
-    padding:70px 20px;
-}
-
-.container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.section h2{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:clamp(22px,3vw,32px);
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-    gap:25px;
-}
-
-.simulador{
-    background:#2c2c2c;
-    color:white;
-    padding:40px;
-    border-radius:12px;
-    text-align:center;
-}
-
-.simulador input,
-.simulador select{
-    width:100%;
-    max-width:300px;
-    padding:12px;
-    margin:10px;
-    border:none;
-    border-radius:6px;
-}
-
-.simulador button{
-    padding:12px 30px;
-    background:#d4af37;
-    border:none;
-    border-radius:6px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.simulador button:hover{
-    background:#b7952b;
-}
-
-.whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    font-size:22px;
-    padding:15px 18px;
-    border-radius:50%;
-    text-decoration:none;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-footer{
-    background:#1f1f1f;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-@media (max-width: 480px){
-    .simulador input{
-        max-width:100%;
-    }
-}
-
+/* SIMULADOR MEJORADO */
+.simulador{background:#2c2c2c;color:white;padding:40px;border-radius:12px;text-align:center;display:flex;flex-direction:column;align-items:center;}
+.simulador input,.simulador select{width:100%;max-width:300px;padding:12px;margin:10px;border:none;border-radius:6px;}
+.simulador button{padding:12px 30px;background:#d4af37;border:none;border-radius:6px;font-weight:bold;cursor:pointer;}
+.simulador button:hover{background:#b7952b;}
+.resultados{display:flex;justify-content:center;flex-wrap:wrap;margin-top:20px;gap:20px;}
+.resultado{background:white;color:#333;padding:20px;border-radius:10px;min-width:200px;flex:1;text-align:center;}
+.resultado p{margin:10px 0;font-weight:bold;}
+.resultado-legal{margin-top:15px;font-size:14px;color:#ddd;text-align:center;max-width:600px;}
+.formulario{background:white;padding:30px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.08);margin-top:30px;}
+.formulario input,.formulario select{width:100%;padding:12px;margin:10px 0;border:1px solid #ccc;border-radius:6px;}
+.formulario button{padding:12px 20px;background:#d4af37;border:none;border-radius:6px;font-weight:bold;cursor:pointer;}
+.formulario button:hover{background:#b7952b;}
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;font-size:22px;padding:15px 18px;border-radius:50%;text-decoration:none;box-shadow:0 5px 15px rgba(0,0,0,0.3);}
+footer{background:#1f1f1f;color:white;text-align:center;padding:25px;}
+@media(max-width:480px){.simulador input{max-width:100%;}.resultados{flex-direction:column;}.resultado{min-width:auto;}}
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>JERS ENTERPRISE</h1>
-    <p>Dedicado a la Gestión de Inversiones</p>
+<h1>JERS ENTERPRISE</h1>
+<p>Dedicado a la Gestión de Inversiones</p>
 </header>
 
 <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#quienes">Quiénes Somos</a>
-    <a href="#quehacemos">Qué Hacemos</a>
-    <a href="#valores">Valores</a>
-    <a href="#costos">Costo de los Servicios</a>
-    <a href="#contratos">Contratos</a>
-    <a href="#simulador">Simulador</a>
-    <a href="#ubicacion">Ubicación</a>
+<a href="#inicio">Inicio</a>
+<a href="#quienes">Quiénes Somos</a>
+<a href="#quehacemos">Qué Hacemos</a>
+<a href="#valores">Valores</a>
+<a href="#costos">Costo de los Servicios</a>
+<a href="#contratos">Contratos</a>
+<a href="#simulador">Simulador</a>
+<a href="#formulario">Formulario de Inversión</a>
+<a href="#ubicacion">Ubicación</a>
 </nav>
 
-<!-- INICIO (AHORA PRIMERO) -->
+<!-- INICIO -->
 <section class="section" id="inicio">
 <div class="container">
 <h2>Bienvenido a la familia JERS ENTERPRISE</h2>
@@ -239,7 +133,93 @@ Estos costos representan el servicio profesional de análisis, planificación y 
 </div>
 </section>
 
-<!-- AQUI CONTINÚA TU CÓDIGO ORIGINAL DE CONTRATOS, SIMULADOR Y UBICACIÓN SIN MODIFICAR -->
+<!-- SIMULADOR -->
+<section class="section" id="simulador">
+<div class="container">
+<h2>Simulador de Inversión</h2>
+<div class="simulador">
+<input type="number" id="monto" placeholder="Monto a invertir (S/)" min="0">
+<input type="number" id="tiempo" placeholder="Tiempo en meses" min="1">
+<select id="tipo">
+<option value="">Selecciona tipo de contrato</option>
+<option value="Agresivo">Agresivo</option>
+<option value="Moderado">Moderado</option>
+<option value="Conservador">Conservador</option>
+</select>
+<button onclick="calcular()">Calcular</button>
+
+<div class="resultados">
+<div class="resultado" id="minimo">Rendimiento Mínimo:<br>S/ 0</div>
+<div class="resultado" id="esperado">Rendimiento Esperado:<br>S/ 0</div>
+</div>
+<p class="resultado-legal">
+Esto es una proyección estimada de su inversión, ya que en el sistema financiero está prohibido prometer un porcentaje fijo por cada inversión.
+</p>
+</div>
+
+<!-- BLOQUE FORMULARIO INFORMÁTICO -->
+<div class="formulario" id="formulario">
+<h2>Formulario de Inversión</h2>
+<form action="https://formsubmit.co/jersenterpriseoficial@gmail.com" method="POST" target="_blank">
+<input type="text" name="Nombre" placeholder="Nombre completo" required>
+<input type="text" name="DNI" placeholder="DNI" required pattern="\d+">
+<input type="tel" name="Telefono" placeholder="Teléfono" required>
+<input type="email" name="Correo" placeholder="Correo electrónico" required>
+<input type="number" name="Monto" placeholder="Monto estimado (S/)" required min="1">
+<select name="Contrato" required>
+<option value="">Tipo de contrato</option>
+<option value="Agresivo">Agresivo</option>
+<option value="Moderado">Moderado</option>
+<option value="Conservador">Conservador</option>
+</select>
+<button type="submit">Enviar Inversión</button>
+</form>
+<p style="margin-top:15px;color:#555;">
+Felicidades por tomar la mejor decisión de invertir. En unos momentos el equipo de asesores de JERS ENTERPRISE se comunicará con usted.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="section" id="ubicacion">
+<div class="container">
+<h2>Ubicación</h2>
+<div class="card">
+Jr. El Dorado 181, Segundo Piso<br>
+Moyobamba, Perú
+</div>
+</div>
+</section>
+
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/519XXXXXXXX?text=Hola%20JERS%20ENTERPRISE" class="whatsapp" target="_blank">💬</a>
+
+<footer>
+<p>© 2026 JERS ENTERPRISE. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+function calcular(){
+    let monto = parseFloat(document.getElementById('monto').value) || 0;
+    let tiempo = parseInt(document.getElementById('tiempo').value) || 1;
+    let tipo = document.getElementById('tipo').value;
+
+    // Definimos porcentajes por tipo (ejemplo)
+    let factor=0;
+    if(tipo==="Agresivo") factor=0.12;
+    else if(tipo==="Moderado") factor=0.08;
+    else if(tipo==="Conservador") factor=0.05;
+
+    let rendimientoEsperado = monto * (1 + factor*tiempo);
+    let rendimientoMinimo = rendimientoEsperado / 2;
+    let capitalGanancia = monto + rendimientoEsperado;
+
+    document.getElementById('minimo').innerHTML=`Rendimiento Mínimo:<br>S/ ${rendimientoMinimo.toFixed(2)}`;
+    document.getElementById('esperado').innerHTML=`Rendimiento Esperado:<br>S/ ${rendimientoEsperado.toFixed(2)}`;
+}
+</script>
 
 </body>
 </html>
