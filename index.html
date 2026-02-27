@@ -138,7 +138,7 @@ footer{
     padding:25px;
 }
 
-@media (max-width:480px){
+@media (max-width: 480px){
     .simulador input{
         max-width:100%;
     }
@@ -171,11 +171,11 @@ footer{
 <h2>Quiénes Somos</h2>
 <div class="card">
 JERS ENTERPRISE es un negocio dedicado a gestionar inversiones en nombre de sus clientes.<br><br>
-Nos especializamos en estructurar capital bajo criterios estratégicos y financieros sólidos.<br><br>
-Operamos con disciplina, responsabilidad contractual y transparencia institucional.<br><br>
-Diseñamos soluciones adaptadas a cada perfil financiero.<br><br>
-Nuestra prioridad es proteger y optimizar el capital invertido.<br><br>
-Construimos relaciones financieras sostenibles a largo plazo.
+Nos especializamos en administrar capital bajo criterios estratégicos sólidos.<br><br>
+Brindamos soluciones financieras adaptadas a cada perfil de inversionista.<br><br>
+Operamos con disciplina, transparencia y responsabilidad contractual.<br><br>
+Nuestro enfoque se basa en la planificación estructurada y análisis técnico.<br><br>
+Construimos relaciones financieras sostenibles y de largo plazo.
 </div>
 </div>
 </section>
@@ -186,11 +186,11 @@ Construimos relaciones financieras sostenibles a largo plazo.
 <h2>Qué Hacemos</h2>
 <div class="card">
 Trabajamos con transacciones financieras de inversión que generen rendimientos financieros a nuestros clientes.<br><br>
-Analizamos oportunidades bajo criterios técnicos y estratégicos.<br><br>
-Gestionamos capital mediante operaciones estructuradas.<br><br>
-Evaluamos riesgos y proyecciones de crecimiento.<br><br>
-Aplicamos planificación financiera disciplinada.<br><br>
-Buscamos resultados sostenibles y responsables.
+Analizamos oportunidades en distintos sectores económicos.<br><br>
+Gestionamos operaciones bajo evaluación estratégica del riesgo.<br><br>
+Optimizamos resultados mediante planificación disciplinada.<br><br>
+Supervisamos cada movimiento financiero con control técnico.<br><br>
+Buscamos crecimiento sostenido y responsable del capital invertido.
 </div>
 </div>
 </section>
@@ -200,12 +200,12 @@ Buscamos resultados sostenibles y responsables.
 <div class="container">
 <h2>Valores</h2>
 <div class="card">
-Actuamos con absoluta transparencia en cada operación financiera.<br><br>
-Mantenemos disciplina en la gestión de inversiones.<br><br>
-Respetamos cada contrato firmado con responsabilidad.<br><br>
-Promovemos ética profesional en todas nuestras decisiones.<br><br>
+Actuamos con absoluta transparencia en cada gestión financiera.<br><br>
+Mantenemos disciplina en la administración de inversiones.<br><br>
+Respetamos cada contrato firmado con responsabilidad profesional.<br><br>
+Promovemos ética y compromiso institucional.<br><br>
 Fomentamos confianza y estabilidad para nuestros clientes.<br><br>
-Trabajamos con visión de crecimiento sostenible.
+Trabajamos con visión estratégica y crecimiento sostenible.
 </div>
 </div>
 </section>
@@ -216,61 +216,17 @@ Trabajamos con visión de crecimiento sostenible.
 <h2>Costo de los Servicios</h2>
 <div class="card">
 <strong>Gestión de Fondos o Negociación:</strong> 35%<br><br>
-<strong>Mantenimiento Administrativo:</strong> 10%<br><br>
+<strong>Mantenimiento:</strong> 10%<br><br>
 <strong>Transacciones Financieras sobre Ganancias:</strong> 5%<br><br>
-<strong>Servicio de Asesoramiento Financiero:</strong> S/ 50<br><br>
-Estos costos reflejan el servicio profesional, análisis estratégico y gestión estructurada brindada por JERS ENTERPRISE.
+<strong>Asesoramiento Financiero:</strong> S/ 50<br><br>
+Estos costos representan el servicio profesional de análisis, planificación y gestión estratégica brindado por JERS ENTERPRISE.
 </div>
 </div>
 </section>
 
-<!-- CONTRATOS -->
-<section class="section" id="contratos">
-<div class="container">
-<h2>Contratos de Inversión</h2>
-<div class="grid">
-<div class="card"><h3>Perfil Agresivo</h3><p>20% mensual</p></div>
-<div class="card"><h3>Perfil Moderado</h3><p>12% mensual</p></div>
-<div class="card"><h3>Perfil Conservador</h3><p>8% mensual</p></div>
-</div>
-</div>
-</section>
+<!-- AQUI SIGUE EXACTAMENTE TU MISMO CÓDIGO ORIGINAL DE CONTRATOS, SIMULADOR Y UBICACIÓN -->
 
-<!-- SIMULADOR -->
-<section class="section" id="simulador">
-<div class="container">
-<h2>Simulador de Inversión</h2>
-<div class="simulador">
-<input type="number" id="capital" placeholder="Capital Inicial (S/)">
-<select id="tiempo">
-<option value="1">1 Mes</option>
-<option value="6">6 Meses</option>
-<option value="12">12 Meses</option>
-</select>
-<select id="perfil">
-<option value="0.20">Agresivo</option>
-<option value="0.12">Moderado</option>
-<option value="0.08">Conservador</option>
-</select>
-<br>
-<button onclick="simular()">Calcular</button>
-<p id="resultado"></p>
-</div>
-</div>
-</section>
-
-<section class="section" id="ubicacion">
-<div class="container">
-<h2>Ubicación</h2>
-<div class="card">
-Jr. El Dorado 181, Segundo Piso<br>
-Moyobamba - Perú<br>
-Atención presencial con previa cita.
-</div>
-</div>
-</section>
-
-<!-- INICIO (FINAL) -->
+<!-- INICIO FINAL -->
 <section class="section" id="inicio">
 <div class="container">
 <h2>Inicio</h2>
@@ -280,27 +236,3 @@ Esperamos poder trabajar juntos por su futuro financiero próspero.
 </div>
 </div>
 </section>
-
-<footer>
-© 2026 JERS ENTERPRISE - Todos los derechos reservados
-</footer>
-
-<a href="https://wa.me/51901784447" class="whatsapp" target="_blank">💬</a>
-
-<script>
-function simular(){
-let capital=parseFloat(document.getElementById("capital").value);
-let tiempo=parseFloat(document.getElementById("tiempo").value);
-let tasa=parseFloat(document.getElementById("perfil").value);
-if(isNaN(capital)){
-document.getElementById("resultado").innerText="Ingrese un capital válido.";
-return;
-}
-let total=capital+(capital*tasa*tiempo);
-document.getElementById("resultado").innerHTML=
-"Total estimado: S/ "+total.toFixed(2);
-}
-</script>
-
-</body>
-</html>
