@@ -149,92 +149,30 @@ Nuestro equipo de asesores te guiará paso a paso.
 </div>
 </section>
 
-<section id="simulador" style="background:#f4f4f4;padding:40px 20px;">
-  <h2 style="text-align:center;color:#0a3d2e;">Simulador de Inversión</h2>
+<!-- SIMULADOR -->
+<section class="section" id="simulador">
+<div class="container">
+<h2>Simulador de Inversión</h2>
+<div class="simulador">
+<input type="number" id="monto" placeholder="Monto a invertir (S/)" min="0">
+<input type="number" id="tiempo" placeholder="Tiempo en meses" min="1">
+<select id="tipo">
+<option value="">Selecciona tipo de contrato</option>
+<option value="Agresivo">Agresivo</option>
+<option value="Moderado">Moderado</option>
+<option value="Conservador">Conservador</option>
+</select>
+<button onclick="calcular()">Calcular</button>
 
-  <div style="max-width:500px;margin:auto;background:white;padding:25px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);">
-    
-    <label>Monto a Invertir (S/):</label>
-    <input type="number" id="monto" placeholder="Ejemplo: 10000" style="width:100%;padding:8px;margin-bottom:15px;">
+<div class="resultados">
+<div class="resultado" id="minimo">Rendimiento Mínimo:<br>S/ 0</div>
+<div class="resultado" id="esperado">Rendimiento Esperado:<br>S/ 0</div>
+</div>
+<p class="resultado-legal">
+Esto es una proyección estimada de su inversión. El sistema financiero prohibe prometer un porcentaje fijo de una inversión.
+</p>
+</div>
 
-    <label>Sector:</label>
-    <select id="sector" style="width:100%;padding:8px;margin-bottom:15px;">
-      <option value="inmobiliario">Sector Inmobiliario (18% - 28%)</option>
-      <option value="financiero">Sector Financiero (24% - 32%)</option>
-      <option value="empresarial">Sector Empresarial (20% - 30%)</option>
-    </select>
-
-    <label>Perfil de Inversión:</label>
-    <select id="perfil" style="width:100%;padding:8px;margin-bottom:15px;">
-      <option value="conservador">Conservador</option>
-      <option value="moderado">Moderado</option>
-      <option value="agresivo">Agresivo</option>
-    </select>
-
-    <label>Plazo:</label>
-    <select id="plazo" style="width:100%;padding:8px;margin-bottom:20px;">
-      <option value="0.25">1 Semana</option>
-      <option value="1">1 Mes</option>
-      <option value="6">6 Meses</option>
-      <option value="12">12 Meses</option>
-      <option value="24">24 Meses</option>
-      <option value="48">48 Meses</option>
-    </select>
-
-    <button onclick="calcularInversion()" style="width:100%;padding:10px;background:#0a3d2e;color:white;border:none;border-radius:5px;cursor:pointer;">
-      Calcular
-    </button>
-
-    <div id="resultado" style="margin-top:20px;font-weight:bold;text-align:center;"></div>
-
-  </div>
-</section>
-
-<script>
-function calcularInversion() {
-  let monto = parseFloat(document.getElementById("monto").value);
-  let sector = document.getElementById("sector").value;
-  let perfil = document.getElementById("perfil").value;
-  let plazo = parseFloat(document.getElementById("plazo").value);
-
-  if (isNaN(monto) || monto <= 0) {
-    document.getElementById("resultado").innerHTML = "Ingrese un monto válido.";
-    return;
-  }
-
-  let tasaAnual = 0;
-
-  // TASAS SEGÚN SECTOR Y PERFIL (REALISTAS)
-  if (sector === "inmobiliario") {
-    if (perfil === "conservador") tasaAnual = 0.11;
-    if (perfil === "moderado") tasaAnual = 0.17;
-    if (perfil === "agresivo") tasaAnual = 0.23;
-  }
-
-  if (sector === "financiero") {
-    if (perfil === "conservador") tasaAnual = 0.13;
-    if (perfil === "moderado") tasaAnual = 0.20;
-    if (perfil === "agresivo") tasaAnual = 0.28;
-  }
-
-  if (sector === "empresarial") {
-    if (perfil === "conservador") tasaAnual = 0.11;
-    if (perfil === "moderado") tasaAnual = 0.18;
-    if (perfil === "agresivo") tasaAnual = 0.24;
-  }
-
-  let tasaMensual = tasaAnual / 12;
-  let ganancia = monto * tasaMensual * plazo;
-  let total = monto + ganancia;
-
-  document.getElementById("resultado").innerHTML =
-    "Ganancia estimada: S/ " + ganancia.toFixed(2) +
-    "<br>Total estimado: S/ " + total.toFixed(2) +
-    "<br><small>*Cálculo referencial según perfil seleccionado.</small>";
-}
-</script>
-
-    
 <!-- BLOQUE FORMULARIO INFORMÁTICO -->
 <div class="formulario" id="formulario">
 <h2>Formulario de Inversión</h2>
