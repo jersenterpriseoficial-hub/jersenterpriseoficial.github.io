@@ -173,48 +173,30 @@ Esto es una proyección estimada de su inversión. El sistema financiero prohibe
 </p>
 </div>
 
-<form action="https://formsubmit.co/jersenterpriseoficial@gmail.com" method="POST">
-
-  <!-- Configuración interna -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="Nuevo Registro de Inversión - JERS ENTERPRISE">
-  <input type="hidden" name="_template" value="table">
-  
-  <!-- Respuesta automática al cliente -->
-  <input type="hidden" name="_autoresponse" value="Estimado inversionista,
-
-Gracias por registrarse en JERS ENTERPRISE.
-Hemos recibido su solicitud correctamente.
-
-En las próximas horas uno de nuestros asesores financieros se comunicará con usted para brindarle información detallada sobre nuestras modalidades de inversión (Conservador, Moderado y Agresivo).
-
-Oficina: Jr. El Dorado 181 – Segundo Piso
-Atención personalizada previa cita.
-
-Atentamente,
-JERS ENTERPRISE
-Dedicado a la Gestión de Inversiones">
-
-  <!-- Datos del cliente -->
-  <label>Nombre Completo:</label>
-  <input type="text" name="Nombre" required>
-
-  <label>Correo Electrónico:</label>
-  <input type="email" name="email" required>
-
-  <label>Teléfono:</label>
-  <input type="text" name="Teléfono" required>
-
-  <label>Tipo de Inversión:</label>
-  <select name="Modalidad" required>
-    <option value="Conservador">Conservador</option>
-    <option value="Moderado">Moderado</option>
-    <option value="Agresivo">Agresivo</option>
-  </select>
-
-  <button type="submit">Enviar Solicitud</button>
-
+<!-- BLOQUE FORMULARIO INFORMÁTICO -->
+<div class="formulario" id="formulario">
+<h2>Formulario de Inversión</h2>
+<form action="https://formsubmit.co/jersenterpriseoficial@gmail.com" method="POST" target="_blank">
+<input type="text" name="Nombre" placeholder="Nombre completo" required>
+<input type="text" name="DNI" placeholder="DNI" required pattern="\d+">
+<input type="tel" name="Telefono" placeholder="Teléfono" required>
+<input type="email" name="Correo" placeholder="Correo electrónico" required>
+<input type="number" name="Monto" placeholder="Monto estimado (S/)" required min="1">
+<select name="Contrato" required>
+<option value="">Tipo de contrato</option>
+<option value="Agresivo">Agresivo</option>
+<option value="Moderado">Moderado</option>
+<option value="Conservador">Conservador</option>
+</select>
+<button type="submit">Enviar Inversión</button>
 </form>
+<p style="margin-top:15px;color:#555;">
+    
+</p>
+</div>
+
+</div>
+</section>
 
 <!-- UBICACIÓN -->
 <section class="section" id="ubicacion">
